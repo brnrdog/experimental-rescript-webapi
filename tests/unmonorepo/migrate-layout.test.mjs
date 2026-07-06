@@ -1,12 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import {
-  mkdtempSync,
-  mkdirSync,
-  readFileSync,
-  writeFileSync,
-  existsSync,
-} from "node:fs";
+import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { migrateLayout } from "../../scripts/unmonorepo/migrate-layout.mjs";
@@ -14,14 +8,8 @@ import { migrateLayout } from "../../scripts/unmonorepo/migrate-layout.mjs";
 function writePackage(root, dir, namespace, files) {
   const packageDir = path.join(root, "packages", dir);
   mkdirSync(path.join(packageDir, "src"), { recursive: true });
-  writeFileSync(
-    path.join(packageDir, "rescript.json"),
-    JSON.stringify({ namespace }),
-  );
-  writeFileSync(
-    path.join(packageDir, "package.json"),
-    JSON.stringify({ name: dir }),
-  );
+  writeFileSync(path.join(packageDir, "rescript.json"), JSON.stringify({ namespace }));
+  writeFileSync(path.join(packageDir, "package.json"), JSON.stringify({ name: dir }));
 
   for (const [name, contents] of Object.entries(files)) {
     writeFileSync(path.join(packageDir, "src", name), contents);
@@ -61,7 +49,7 @@ test("moves legacy sources into src/<Feature>, renames duplicate leaves, and rem
   });
 
   writePackage(root, "URL", "WebApiURL", {
-    "URL.res": 'external make: unit => unit = "URL"',
+    "URL.res": "external make: unit => unit = \"URL\"",
     "URLSearchParams.res": "type t",
   });
 
@@ -73,10 +61,7 @@ test("moves legacy sources into src/<Feature>, renames duplicate leaves, and rem
     readFileSync(path.join(root, "src", "DOM", "Document.res"), "utf8"),
     "let current = WebApiDOM.Global.document",
   );
-  assert.equal(
-    readFileSync(path.join(root, "src", "DOM", "DomTypes.res"), "utf8"),
-    "type element",
-  );
+  assert.equal(readFileSync(path.join(root, "src", "DOM", "DomTypes.res"), "utf8"), "type element");
   assert.equal(
     readFileSync(path.join(root, "src", "DOM", "DomGlobal.res"), "utf8"),
     "let document = 1",
@@ -94,17 +79,11 @@ test("moves legacy sources into src/<Feature>, renames duplicate leaves, and rem
     "type worker",
   );
   assert.equal(
-    readFileSync(
-      path.join(root, "src", "WebWorkers", "SharedWorkerScope.res"),
-      "utf8",
-    ),
+    readFileSync(path.join(root, "src", "WebWorkers", "SharedWorkerScope.res"), "utf8"),
     "type sharedWorker",
   );
   assert.equal(
-    readFileSync(
-      path.join(root, "src", "ServiceWorker", "ServiceWorkerScope.res"),
-      "utf8",
-    ),
+    readFileSync(path.join(root, "src", "ServiceWorker", "ServiceWorkerScope.res"), "utf8"),
     "type serviceWorker",
   );
   assert.equal(
@@ -113,18 +92,12 @@ test("moves legacy sources into src/<Feature>, renames duplicate leaves, and rem
   );
   assert.equal(
     readFileSync(path.join(root, "src", "URL", "URL.res"), "utf8"),
-    'external make: unit => unit = "URL"',
+    "external make: unit => unit = \"URL\"",
   );
-  assert.equal(
-    readFileSync(path.join(root, "src", "URL", "URLSearchParams.res"), "utf8"),
-    "type t",
-  );
+  assert.equal(readFileSync(path.join(root, "src", "URL", "URLSearchParams.res"), "utf8"), "type t");
   assert.ok(!existsSync(path.join(root, "src", "DOM", "DOM.res")));
-  assert.ok(!existsSync(path.join(root, "src", "Base", "DOM.res")));
-  assert.equal(
-    readFileSync(path.join(root, "src", "Base", "DOM.res"), "utf8"),
-    "type dom = unit",
-  );
+  assert.ok(!existsSync(path.join(root, "src", "Base", "Base.res")));
+  assert.equal(readFileSync(path.join(root, "src", "Base", "DOM.res"), "utf8"), "type dom = unit");
   assert.ok(!existsSync(path.join(root, "packages", "DOM", "rescript.json")));
   assert.ok(!existsSync(path.join(root, "packages", "DOM", "package.json")));
   assert.ok(!existsSync(path.join(root, "packages", "DOM")));
