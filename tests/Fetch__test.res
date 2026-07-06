@@ -26,7 +26,13 @@ let response3 = await Fetch.fetchWithRequest(
   },
 )
 
-let registrationResult = await DOM.window
+DOM.window->Window.removeEventListener(
+  EventType.Mousedown,
+  MouseEvent.preventDefault,
+  ~options={capture: false},
+)
+
+let registrationResult = await Window.current
 ->Window.navigator
 ->Navigator.serviceWorker
 ->ServiceWorkerContainer.register("/sw.js")

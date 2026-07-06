@@ -215,33 +215,33 @@ async function emitDom() {
         webidl.interfaces!.interface[partial.name] ||
         webidl.mixins!.mixin[partial.name];
       if (base) {
-        if (DOM.exposed) resolveExposure(partial, DOM.exposed);
-        merge(DOM.constants, partial.constants, true);
-        merge(DOM.methods, partial.methods, true);
-        merge(DOM.properties, partial.properties, true);
+        if (base.exposed) resolveExposure(partial, base.exposed);
+        merge(base.constants, partial.constants, true);
+        merge(base.methods, partial.methods, true);
+        merge(base.properties, partial.properties, true);
       }
     }
     for (const partial of w.partialMixins) {
       const base = webidl.mixins!.mixin[partial.name];
       if (base) {
-        if (DOM.exposed) resolveExposure(partial, DOM.exposed);
-        merge(DOM.constants, partial.constants, true);
-        merge(DOM.methods, partial.methods, true);
-        merge(DOM.properties, partial.properties, true);
+        if (base.exposed) resolveExposure(partial, base.exposed);
+        merge(base.constants, partial.constants, true);
+        merge(base.methods, partial.methods, true);
+        merge(base.properties, partial.properties, true);
       }
     }
     for (const partial of w.partialDictionaries) {
       const base = webidl.dictionaries!.dictionary[partial.name];
       if (base) {
-        merge(DOM.members, partial.members, true);
+        merge(base.members, partial.members, true);
       }
     }
     for (const partial of w.partialNamespaces) {
       const base = webidl.namespaces?.find((n) => n.name === partial.name);
       if (base) {
-        if (DOM.exposed) resolveExposure(partial, DOM.exposed);
-        merge(DOM.methods, partial.methods, true);
-        merge(DOM.properties, partial.properties, true);
+        if (base.exposed) resolveExposure(partial, base.exposed);
+        merge(base.methods, partial.methods, true);
+        merge(base.properties, partial.properties, true);
       }
     }
     for (const include of w.includes) {
