@@ -83,7 +83,7 @@ Dispatches a synthetic event event to target and returns true if either event's 
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/EventTarget/dispatchEvent)
 */
   @send
-  external dispatchEvent: (T.t, Event.t) => bool = "dispatchEvent"
+  external dispatchEvent: (T.t, DOM.event) => bool = "dispatchEvent"
 }
 
 include Impl({type t = DOM.eventTarget})

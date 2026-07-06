@@ -1,5 +1,3 @@
-type t = DOM.extendableEvent = private {...DOM.extendableEvent}
-
 module Impl = (
   T: {
     type t
@@ -11,4 +9,4 @@ module Impl = (
   external waitUntil: (T.t, promise<'a>) => unit = "waitUntil"
 }
 
-include Impl({type t = t})
+include Impl({type t = DOM.extendableEvent})

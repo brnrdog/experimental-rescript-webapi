@@ -1,5 +1,3 @@
-@@warning("-30")
-
 @unboxed
 type t =
   | @as("abort") Abort

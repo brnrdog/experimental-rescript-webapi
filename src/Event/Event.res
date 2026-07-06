@@ -1,5 +1,3 @@
-type t = DOM.event = private {...DOM.event}
-
 type eventInit = DOM.eventInit = {
   mutable bubbles?: bool,
   mutable cancelable?: bool,
@@ -7,45 +5,43 @@ type eventInit = DOM.eventInit = {
 }
 
 @new
-external make: (~type_: string, ~eventInitDict: eventInit=?) => t = "Event"
+external make: (~type_: string, ~eventInitDict: eventInit=?) => DOM.event = "Event"
 
 @get
-external type_: t => EventType.t = "type"
+external type_: DOM.event => EventType.t = "type"
 
 @get
-external target: t => Null.t<DOM.eventTarget> = "target"
+external target: DOM.event => Null.t<DOM.eventTarget> = "target"
 
 @get
-external currentTarget: t => Null.t<DOM.eventTarget> = "currentTarget"
+external currentTarget: DOM.event => Null.t<DOM.eventTarget> = "currentTarget"
 
 @get
-external eventPhase: t => int = "eventPhase"
+external eventPhase: DOM.event => int = "eventPhase"
 
 @get
-external bubbles: t => bool = "bubbles"
+external bubbles: DOM.event => bool = "bubbles"
 
 @get
-external cancelable: t => bool = "cancelable"
+external cancelable: DOM.event => bool = "cancelable"
 
 @get
-external defaultPrevented: t => bool = "defaultPrevented"
+external defaultPrevented: DOM.event => bool = "defaultPrevented"
 
 @get
-external composed: t => bool = "composed"
+external composed: DOM.event => bool = "composed"
 
 @get
-external isTrusted: t => bool = "isTrusted"
+external isTrusted: DOM.event => bool = "isTrusted"
 
 @get
-external timeStamp: t => float = "timeStamp"
+external timeStamp: DOM.event => float = "timeStamp"
 
 module Impl = (
   T: {
     type t
   },
 ) => {
-  external asEvent: T.t => t = "%identity"
-
   /**
 Returns the invocation target objects of event's path (objects on which listeners will be invoked), except for any nodes in shadow trees of which the shadow root's mode is "closed" that are not reachable from event's currentTarget.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Event/composedPath)
@@ -75,4 +71,4 @@ When dispatched in a tree, invoking this method prevents event from reaching any
   external stopPropagation: T.t => unit = "stopPropagation"
 }
 
-include Impl({type t = t})
+include Impl({type t = DOM.event})

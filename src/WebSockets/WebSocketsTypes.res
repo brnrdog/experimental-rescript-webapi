@@ -56,7 +56,7 @@ A CloseEvent is sent to clients using WebApiWebSockets when the connection is cl
 */
 @editor.completeFrom(CloseEvent)
 type closeEvent = private {
-  ...Event.t,
+  ...DOM.event,
   /**
     Returns true if the connection closed cleanly; false otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CloseEvent/wasClean)
@@ -79,7 +79,7 @@ A message received by a target object.
 [See MessageEvent on MDN](https://developer.mozilla.org/docs/Web/API/MessageEvent)
 */
 type messageEvent<'t> = {
-  ...Event.t,
+  ...DOM.event,
   /**
     Returns the data of the message.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MessageEvent/data)

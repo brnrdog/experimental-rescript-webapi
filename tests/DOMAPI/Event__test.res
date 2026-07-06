@@ -1,15 +1,15 @@
-let acceptsDOMEvent = (_event: Event.t) => ()
-let acceptsEvent = (_event: Event.t) => ()
+let acceptsDOMEvent = (_event: DOM.event) => ()
+let acceptsEvent = (_event: DOM.event) => ()
 
-let _ = (event: Event.t) => {
+let _ = (event: DOM.event) => {
   acceptsEvent(event)
 }
 
-let _ = (event: Event.t) => {
+let _ = (event: DOM.event) => {
   acceptsDOMEvent(event)
 }
 
-let handleClick = (event: Event.t) => {
+let handleClick = (event: DOM.event) => {
   event->Event.preventDefault
   switch event->Event.target {
   | Value(target) => Console.log(target)

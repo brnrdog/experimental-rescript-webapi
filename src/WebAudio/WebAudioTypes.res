@@ -80,7 +80,7 @@ The Web Audio API events that occur when a ScriptProcessorNode input buffer is r
 */
 @editor.completeFrom(AudioProcessingEvent)
 type audioProcessingEvent = private {
-  ...Event.t,
+  ...DOM.event,
 }
 
 /**
@@ -89,7 +89,7 @@ The Web Audio API OfflineAudioCompletionEvent interface represents events that o
 */
 @editor.completeFrom(OfflineAudioCompletionEvent)
 type offlineAudioCompletionEvent = private {
-  ...Event.t,
+  ...DOM.event,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/OfflineAudioCompletionEvent/renderedBuffer)
     */

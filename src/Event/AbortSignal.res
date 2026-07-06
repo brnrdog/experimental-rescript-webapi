@@ -1,27 +1,25 @@
-type t = DOM.abortSignal = private {...DOM.abortSignal}
-
-include EventTarget.Impl({type t = t})
+include EventTarget.Impl({type t = DOM.abortSignal})
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_static)
 */
 @scope("AbortSignal")
-external abort: (~reason: JSON.t=?) => t = "abort"
+external abort: (~reason: JSON.t=?) => DOM.abortSignal = "abort"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/AbortSignal/timeout_static)
 */
 @scope("AbortSignal")
-external timeout: int => t = "timeout"
+external timeout: int => DOM.abortSignal = "timeout"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/AbortSignal/any_static)
 */
 @scope("AbortSignal")
-external any: array<t> => t = "any"
+external any: array<DOM.abortSignal> => DOM.abortSignal = "any"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/AbortSignal/throwIfAborted)
 */
 @send
-external throwIfAborted: t => unit = "throwIfAborted"
+external throwIfAborted: DOM.abortSignal => unit = "throwIfAborted"

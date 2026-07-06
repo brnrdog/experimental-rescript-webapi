@@ -10,7 +10,7 @@ Simple user interface events.
 */
 @editor.completeFrom(UIEvent)
 type uiEvent = private {
-  ...Event.t,
+  ...DOM.event,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/UIEvent/view)
     */

@@ -19,7 +19,7 @@ A StorageEvent is sent to a window when a storage area it has access to is chang
 */
 @editor.completeFrom(StorageEvent)
 type storageEvent = private {
-  ...Event.t,
+  ...DOM.event,
   /**
     Returns the key of the storage item being changed.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/StorageEvent/key)
