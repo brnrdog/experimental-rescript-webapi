@@ -17,7 +17,7 @@ let handleClick = (event: Event.t) => {
   }
 }
 
-let target: EventTarget.t = {}
+let target: DOM.eventTarget = {}
 
 let fn = (target: DOM.eventTarget) =>
   target->EventTarget.addEventListener(Click, () => Console.log("Click 1"))

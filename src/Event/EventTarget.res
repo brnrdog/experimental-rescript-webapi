@@ -1,10 +1,5 @@
-/**
-[Read more on MDN](https://developer.mozilla.org/docs/Web/API/EventTarget)
-*/
-type t = DOM.eventTarget = private {...DOM.eventTarget}
-
 @new
-external make: unit => t = "EventTarget"
+external make: unit => DOM.eventTarget = "EventTarget"
 
 module Impl = (
   T: {
@@ -91,4 +86,4 @@ Dispatches a synthetic event event to target and returns true if either event's 
   external dispatchEvent: (T.t, Event.t) => bool = "dispatchEvent"
 }
 
-include Impl({type t = t})
+include Impl({type t = DOM.eventTarget})

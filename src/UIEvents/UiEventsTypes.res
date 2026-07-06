@@ -44,7 +44,7 @@ type focusEvent = private {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/FocusEvent/relatedTarget)
     */
-  relatedTarget: Null.t<EventTarget.t>,
+  relatedTarget: Null.t<DOM.eventTarget>,
 }
 
 /**
@@ -248,7 +248,7 @@ type mouseEvent = private {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MouseEvent/relatedTarget)
     */
-  relatedTarget: Null.t<EventTarget.t>,
+  relatedTarget: Null.t<DOM.eventTarget>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MouseEvent/pageX)
     */
@@ -321,7 +321,7 @@ type touch = private {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Touch/target)
     */
-  target: EventTarget.t,
+  target: DOM.eventTarget,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Touch/screenX)
     */
@@ -503,14 +503,14 @@ type mouseEventInit = {
   mutable clientY?: int,
   mutable button?: int,
   mutable buttons?: int,
-  mutable relatedTarget?: Null.t<EventTarget.t>,
+  mutable relatedTarget?: Null.t<DOM.eventTarget>,
   mutable movementX?: float,
   mutable movementY?: float,
 }
 
 type focusEventInit = {
   ...uiEventInit,
-  mutable relatedTarget?: Null.t<EventTarget.t>,
+  mutable relatedTarget?: Null.t<DOM.eventTarget>,
 }
 
 type compositionEventInit = {
@@ -548,7 +548,7 @@ type inputEventInit = {
 
 type touchInit = {
   mutable identifier: int,
-  mutable target: EventTarget.t,
+  mutable target: DOM.eventTarget,
   mutable clientX?: float,
   mutable clientY?: float,
   mutable screenX?: float,

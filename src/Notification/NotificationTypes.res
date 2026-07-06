@@ -16,7 +16,7 @@ This Notifications API interface is used to configure and display desktop notifi
 */
 @editor.completeFrom(WebApiNotification)
 type notification = private {
-  ...EventTarget.t,
+  ...DOM.eventTarget,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Notification/permission_static)
     */
@@ -64,7 +64,7 @@ type notification = private {
 }
 
 /**
- An array of actions to display in the notification, for which the default is an empty array. 
+ An array of actions to display in the notification, for which the default is an empty array.
  [Read more on MDN](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification#actions)
  */
 type notificationAction = {

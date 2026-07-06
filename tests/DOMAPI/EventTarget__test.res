@@ -1,11 +1,11 @@
-let acceptsDOMEventTarget = (_target: EventTarget.t) => ()
-let acceptsEventTargetLeaf = (_target: EventTarget.t) => ()
+let acceptsDOMEventTarget = (_target: DOM.eventTarget) => ()
+let acceptsEventTargetLeaf = (_target: DOM.eventTarget) => ()
 
-let _ = (target: EventTarget.t) => {
+let _ = (target: DOM.eventTarget) => {
   acceptsEventTargetLeaf(target)
 }
 
-let _ = (target: EventTarget.t) => {
+let _ = (target: DOM.eventTarget) => {
   acceptsDOMEventTarget(target)
 }
 
