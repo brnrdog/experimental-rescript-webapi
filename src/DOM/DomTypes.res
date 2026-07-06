@@ -334,7 +334,7 @@ type barProp = {
 */
 @editor.completeFrom(ScreenOrientation)
 type screenOrientation = private {
-  ...DOM_.eventTarget,
+  ...DOM.eventTarget,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/type)
     */
@@ -1804,7 +1804,7 @@ The CanvasRenderingContext2D interface, part of the WebApiCanvas API, provides t
 type canvasRenderingContext2D
 
 type rec animation = {
-  ...DOM_.eventTarget,
+  ...DOM.eventTarget,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Animation/id)
     */

@@ -1,4 +1,4 @@
-type t = DOM_.extendableEvent = private {...DOM_.extendableEvent}
+type t = DOM.extendableEvent = private {...DOM.extendableEvent}
 
 module Impl = (
   T: {

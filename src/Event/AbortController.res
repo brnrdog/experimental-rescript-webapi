@@ -1,7 +1,7 @@
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/AbortController)
 */
-type t = DOM_.abortController = private {...DOM_.abortController}
+type t = DOM.abortController = private {...DOM.abortController}
 
 @new
 external make: unit => t = "AbortController"

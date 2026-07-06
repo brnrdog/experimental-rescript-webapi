@@ -1,6 +1,6 @@
-type t = DOM_.event = private {...DOM_.event}
+type t = DOM.event = private {...DOM.event}
 
-type eventInit = DOM_.eventInit = {
+type eventInit = DOM.eventInit = {
   mutable bubbles?: bool,
   mutable cancelable?: bool,
   mutable composed?: bool,
@@ -13,10 +13,10 @@ external make: (~type_: string, ~eventInitDict: eventInit=?) => t = "Event"
 external type_: t => EventType.t = "type"
 
 @get
-external target: t => Null.t<DOM_.eventTarget> = "target"
+external target: t => Null.t<DOM.eventTarget> = "target"
 
 @get
-external currentTarget: t => Null.t<DOM_.eventTarget> = "currentTarget"
+external currentTarget: t => Null.t<DOM.eventTarget> = "currentTarget"
 
 @get
 external eventPhase: t => int = "eventPhase"
@@ -51,7 +51,7 @@ Returns the invocation target objects of event's path (objects on which listener
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Event/composedPath)
 */
   @send
-  external composedPath: T.t => array<DOM_.eventTarget> = "composedPath"
+  external composedPath: T.t => array<DOM.eventTarget> = "composedPath"
 
   /**
 If invoked when the cancelable attribute value is true, and while executing a listener for the event with passive set to false, signals to the operation that caused event to be dispatched that it needs to be canceled.
