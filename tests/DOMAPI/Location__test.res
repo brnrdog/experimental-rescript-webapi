@@ -9,5 +9,5 @@ location->Location.reload
 
 let a = 0
 
-// this is testing out the editor autocomplete
+// testing out editor autocomplete
 let fn = (l: DOM.location) => l->Location.reload
