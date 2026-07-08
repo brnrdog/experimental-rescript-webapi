@@ -14,7 +14,6 @@ type timeRanges = DOM.timeRanges
 type textTrackList = DOM.textTrackList
 type htmlFormElement = DOM.htmlFormElement
 type htmlCollection<'a> = DOM.htmlCollection<'a>
-type element = DOM.element
 type validityState = DOM.validityState
 type cssStyleSheet = DOM.cssStyleSheet
 type nodeList<'a> = DOM.nodeList<'a>
@@ -23,7 +22,6 @@ type documentFragment = DOM.documentFragment
 type node = DOM.node
 type cssStyleDeclaration = DOM.cssStyleDeclaration
 type domRectReadOnly = DOM.domRectReadOnly
-type shadowRoot = DOM.shadowRoot
 type styleSheet = DOM.styleSheet
 type mediaQueryList = DOM.mediaQueryList
 type domRect = DOM.domRect
@@ -80,10 +78,6 @@ A window containing a WebApiDOM document; the document property points to the We
 [See Window on MDN](https://developer.mozilla.org/docs/Web/API/Window)
 */
 @editor.completeFrom(Window) type window = DOM.window
-
-type shadowRootMode =
-  | @as("closed") Closed
-  | @as("open") Open
 
 type slotAssignmentMode =
   | @as("manual") Manual
@@ -154,18 +148,6 @@ type animationReplaceState =
   | @as("persisted") Persisted
   | @as("removed") Removed
 
-type fillMode =
-  | @as("auto") Auto
-  | @as("backwards") Backwards
-  | @as("both") Both
-  | @as("forwards") Forwards
-  | @as("none") None
-
-type playbackDirection =
-  | @as("alternate") Alternate
-  | @as("alternate-reverse") AlternateReverse
-  | @as("normal") Normal
-  | @as("reverse") Reverse
 
 type imageOrientation =
   | @as("flipY") FlipY
@@ -199,14 +181,6 @@ type selectionMode =
   | @as("select") Select
   | @as("start") Start
 
-type compositeOperation =
-  | @as("accumulate") Accumulate
-  | @as("add") Add
-  | @as("replace") Replace
-
-type iterationCompositeOperation =
-  | @as("accumulate") Accumulate
-  | @as("replace") Replace
 
 type videoPixelFormat =
   | BGRA
@@ -732,7 +706,7 @@ type htmlFieldSetElement = {
     Returns an HTMLCollection of the form controls in the element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/elements)
     */
-  elements: htmlCollection<element>,
+  elements: htmlCollection<DOM.element>,
   /**
     Returns whether an element will successfully validate based on forms validation rules and constraints.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/willValidate)
@@ -960,7 +934,7 @@ type htmlMapElement = {
     Retrieves a collection of the area objects defined for the given map object.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLMapElement/areas)
     */
-  areas: htmlCollection<element>,
+  areas: htmlCollection<DOM.element>,
 }
 
 /**
@@ -1434,7 +1408,7 @@ All of the SVG WebApiDOM interfaces that correspond directly to elements in the 
 [See SVGElement on MDN](https://developer.mozilla.org/docs/Web/API/SVGElement)
 */
 type svgElement = {
-  ...element,
+  ...DOM.element,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset)
     */
@@ -1752,13 +1726,6 @@ type documentTimelineOptions = {mutable originTime?: float}
 
 type getRootNodeOptions = {mutable composed?: bool}
 
-type shadowRootInit = {
-  mutable mode: shadowRootMode,
-  mutable delegatesFocus?: bool,
-  mutable slotAssignment?: slotAssignmentMode,
-  mutable serializable?: bool,
-}
-
 type checkVisibilityOptions = {
   mutable checkOpacity?: bool,
   mutable checkVisibilityCSS?: bool,
@@ -1776,11 +1743,6 @@ type scrollToOptions = {
 }
 
 type fullscreenOptions = {mutable navigationUI?: fullscreenNavigationUI}
-
-type getHTMLOptions = {
-  mutable serializableShadowRoots?: bool,
-  mutable shadowRoots?: array<shadowRoot>,
-}
 
 type pointerLockOptions = {mutable unadjustedMovement?: bool}
 
@@ -1829,42 +1791,6 @@ type assignedNodesOptions = {mutable flatten?: bool}
 
 type focusOptions = {mutable preventScroll?: bool}
 
-type effectTiming = {
-  mutable fill?: fillMode,
-  mutable iterationStart?: float,
-  mutable iterations?: float,
-  mutable direction?: playbackDirection,
-  mutable easing?: string,
-  mutable delay?: float,
-  mutable endDelay?: float,
-  mutable playbackRate?: float,
-  mutable duration?: unknown,
-}
-
-type getAnimationsOptions = {mutable subtree?: bool}
-
-type computedEffectTiming = {
-  ...effectTiming,
-  mutable progress?: Null.t<float>,
-  mutable currentIteration?: Null.t<float>,
-  mutable startTime?: float,
-  mutable endTime?: float,
-  mutable activeDuration?: float,
-  mutable localTime?: Null.t<float>,
-}
-
-type optionalEffectTiming = {
-  mutable delay?: float,
-  mutable endDelay?: float,
-  mutable fill?: fillMode,
-  mutable iterationStart?: float,
-  mutable iterations?: float,
-  mutable duration?: unknown,
-  mutable direction?: playbackDirection,
-  mutable easing?: string,
-  mutable playbackRate?: float,
-}
-
 type imageBitmapOptions = {
   mutable imageOrientation?: imageOrientation,
   mutable premultiplyAlpha?: premultiplyAlpha,
@@ -1883,19 +1809,6 @@ type scrollIntoViewOptions = {
 type windowPostMessageOptions = {
   ...structuredSerializeOptions,
   mutable targetOrigin?: string,
-}
-
-type keyframeEffectOptions = {
-  ...effectTiming,
-  mutable composite?: compositeOperation,
-  mutable pseudoElement?: Null.t<string>,
-  mutable iterationComposite?: iterationCompositeOperation,
-}
-
-type keyframeAnimationOptions = {
-  ...keyframeEffectOptions,
-  mutable id?: string,
-  mutable timeline?: Null.t<animationTimeline>,
 }
 
 type svgBoundingBoxOptions = {

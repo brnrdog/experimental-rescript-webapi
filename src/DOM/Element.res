@@ -1,3 +1,378 @@
+
+/**
+Element is the most general base class from which all objects in a Document inherit. It only has methods and properties common to all kinds of elements. More specific classes inherit from Element.
+[See Element on MDN](https://developer.mozilla.org/docs/Web/API/Element)
+TODO: mark as private once mutating fields of private records is allowed
+*/
+type rec element = {
+  // Base properties from Node
+  /**
+    Returns the type of node.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nodeType)
+    */
+  nodeType: int,
+  /**
+    Returns a string appropriate for the type of node.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nodeName)
+    */
+  nodeName: string,
+  /**
+    Returns node's node document's document base URL.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/baseURI)
+    */
+  baseURI: string,
+  /**
+    Returns true if node is connected and false otherwise.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/isConnected)
+    */
+  isConnected: bool,
+  /**
+    Returns the node document. Returns null for documents.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/ownerDocument)
+    */
+  ownerDocument: Null.t<document>,
+  /**
+    Returns the parent.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentNode)
+    */
+  parentNode: Null.t<node>,
+  /**
+    Returns the parent element.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentElement)
+    */
+  parentElement: Null.t<htmlElement>,
+  /**
+    Returns the children.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
+    */
+  childNodes: nodeList<node>,
+  /**
+    Returns the first child.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/firstChild)
+    */
+  firstChild: Null.t<node>,
+  /**
+    Returns the last child.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/lastChild)
+    */
+  lastChild: Null.t<node>,
+  /**
+    Returns the previous sibling.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/previousSibling)
+    */
+  previousSibling: Null.t<node>,
+  /**
+    Returns the next sibling.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nextSibling)
+    */
+  nextSibling: Null.t<node>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nodeValue)
+    */
+  mutable nodeValue: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/textContent)
+    */
+  mutable textContent: Null.t<string>,
+  // End base properties from Node
+
+  /**
+    Returns the namespace.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/namespaceURI)
+    */
+  namespaceURI: Null.t<string>,
+  /**
+    Returns the namespace prefix.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/prefix)
+    */
+  prefix: Null.t<string>,
+  /**
+    Returns the local name.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/localName)
+    */
+  localName: string,
+  /**
+    Returns the HTML-uppercased qualified name.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/tagName)
+    */
+  tagName: string,
+  /**
+    Returns the value of element's id content attribute. Can be set to change it.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/id)
+    */
+  mutable id: string,
+  /**
+    Returns the value of element's class content attribute. Can be set to change it.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/className)
+    */
+  mutable className: string,
+  /**
+    Allows for manipulation of element's class content attribute as a set of whitespace-separated tokens through a DOMTokenList object.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/classList)
+    */
+  classList: domTokenList,
+  /**
+    Returns the value of element's slot content attribute. Can be set to change it.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/slot)
+    */
+  mutable slot: string,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/attributes)
+    */
+  attributes: namedNodeMap,
+  /**
+    Returns element's shadow root, if any, and if shadow root's mode is "open", and null otherwise.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/shadowRoot)
+    */
+  shadowRoot: Null.t<shadowRoot>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/part)
+    */
+  part: domTokenList,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scrollTop)
+    */
+  mutable scrollTop: float,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scrollLeft)
+    */
+  mutable scrollLeft: float,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scrollWidth)
+    */
+  scrollWidth: int,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scrollHeight)
+    */
+  scrollHeight: int,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/clientTop)
+    */
+  clientTop: int,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/clientLeft)
+    */
+  clientLeft: int,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/clientWidth)
+    */
+  clientWidth: int,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/clientHeight)
+    */
+  clientHeight: int,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/currentCSSZoom)
+    */
+  currentCSSZoom: float,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)
+    */
+  mutable innerHTML: string,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/outerHTML)
+    */
+  mutable outerHTML: string,
+  /**
+    Returns the child elements.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/children)
+    */
+  children: htmlCollection<element>,
+  /**
+    Returns the first child that is an element, and null otherwise.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/firstElementChild)
+    */
+  firstElementChild: Null.t<element>,
+  /**
+    Returns the last child that is an element, and null otherwise.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/lastElementChild)
+    */
+  lastElementChild: Null.t<element>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/childElementCount)
+    */
+  childElementCount: int,
+  /**
+    Returns the first preceding sibling that is an element, and null otherwise.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CharacterData/previousElementSibling)
+    */
+  previousElementSibling: Null.t<element>,
+  /**
+    Returns the first following sibling that is an element, and null otherwise.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CharacterData/nextElementSibling)
+    */
+  nextElementSibling: Null.t<element>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/assignedSlot)
+    */
+  assignedSlot: Null.t<htmlSlotElement>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaAtomic)
+    */
+  mutable ariaAtomic: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaAutoComplete)
+    */
+  mutable ariaAutoComplete: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaBrailleLabel)
+    */
+  mutable ariaBrailleLabel: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaBrailleRoleDescription)
+    */
+  mutable ariaBrailleRoleDescription: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaBusy)
+    */
+  mutable ariaBusy: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaChecked)
+    */
+  mutable ariaChecked: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaColCount)
+    */
+  mutable ariaColCount: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaColIndex)
+    */
+  mutable ariaColIndex: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaColIndexText)
+    */
+  mutable ariaColIndexText: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaColSpan)
+    */
+  mutable ariaColSpan: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaCurrent)
+    */
+  mutable ariaCurrent: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaDescription)
+    */
+  mutable ariaDescription: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaDisabled)
+    */
+  mutable ariaDisabled: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaExpanded)
+    */
+  mutable ariaExpanded: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaHasPopup)
+    */
+  mutable ariaHasPopup: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaHidden)
+    */
+  mutable ariaHidden: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaKeyShortcuts)
+    */
+  mutable ariaKeyShortcuts: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaLabel)
+    */
+  mutable ariaLabel: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaLevel)
+    */
+  mutable ariaLevel: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaLive)
+    */
+  mutable ariaLive: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaModal)
+    */
+  mutable ariaModal: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaMultiLine)
+    */
+  mutable ariaMultiLine: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaMultiSelectable)
+    */
+  mutable ariaMultiSelectable: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaOrientation)
+    */
+  mutable ariaOrientation: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaPlaceholder)
+    */
+  mutable ariaPlaceholder: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaPosInSet)
+    */
+  mutable ariaPosInSet: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaPressed)
+    */
+  mutable ariaPressed: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaReadOnly)
+    */
+  mutable ariaReadOnly: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaRequired)
+    */
+  mutable ariaRequired: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaRoleDescription)
+    */
+  mutable ariaRoleDescription: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaRowCount)
+    */
+  mutable ariaRowCount: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaRowIndex)
+    */
+  mutable ariaRowIndex: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaRowIndexText)
+    */
+  mutable ariaRowIndexText: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaRowSpan)
+    */
+  mutable ariaRowSpan: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaSelected)
+    */
+  mutable ariaSelected: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaSetSize)
+    */
+  mutable ariaSetSize: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaSort)
+    */
+  mutable ariaSort: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaValueMax)
+    */
+  mutable ariaValueMax: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaValueMin)
+    */
+  mutable ariaValueMin: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaValueNow)
+    */
+  mutable ariaValueNow: Null.t<string>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/ariaValueText)
+    */
+  mutable ariaValueText: Null.t<string>,
+}
+
+
 module Impl = (
   T: {
     type t
@@ -5,7 +380,7 @@ module Impl = (
 ) => {
   include Node.Impl({type t = T.t})
 
-  external asElement: T.t => DomTypes.element = "%identity"
+  external asElement: T.t => DOM.element = "%identity"
 
   /**
 Inserts nodes just after node, while replacing strings in nodes with equivalent Text nodes.
@@ -14,7 +389,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/after)
 */
   @send
-  external after: (T.t, DomTypes.node) => unit = "after"
+  external after: (T.t, DOM.node) => unit = "after"
 
   /**
 Inserts nodes just after node, while replacing strings in nodes with equivalent Text nodes.
@@ -38,7 +413,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
   external animate2: (
     T.t,
     ~keyframes: unknown,
-    ~options: DomTypes.keyframeAnimationOptions=?,
+    ~options: Animation.keyframeAnimationOptions=?,
   ) => Animation.t = "animate"
 
   /**
@@ -48,7 +423,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/append)
 */
   @send
-  external append: (T.t, DomTypes.node) => unit = "append"
+  external append: (T.t, DOM.node) => unit = "append"
 
   /**
 Inserts nodes after the last child of node, while replacing strings in nodes with equivalent Text nodes.
@@ -64,7 +439,7 @@ Creates a shadow root for element and returns it.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/attachShadow)
 */
   @send
-  external attachShadow: (T.t, DomTypes.shadowRootInit) => DomTypes.shadowRoot = "attachShadow"
+  external attachShadow: (T.t, ShadowRoot.shadowRootInit) => ShadowRoot.t = "attachShadow"
 
   /**
 Inserts nodes just before node, while replacing strings in nodes with equivalent Text nodes.
@@ -73,7 +448,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/before)
 */
   @send
-  external before: (T.t, DomTypes.node) => unit = "before"
+  external before: (T.t, DOM.node) => unit = "before"
 
   /**
 Inserts nodes just before node, while replacing strings in nodes with equivalent Text nodes.
@@ -88,7 +463,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/checkVisibility)
 */
   @send
-  external checkVisibility: (T.t, ~options: DomTypes.checkVisibilityOptions=?) => bool =
+  external checkVisibility: (T.t, ~options: DOM.checkVisibilityOptions=?) => bool =
     "checkVisibility"
 
   /**
@@ -102,13 +477,13 @@ Returns the first (starting at element) inclusive ancestor that matches selector
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/computedStyleMap)
 */
   @send
-  external computedStyleMap: T.t => DomTypes.stylePropertyMapReadOnly = "computedStyleMap"
+  external computedStyleMap: T.t => DOM.stylePropertyMapReadOnly = "computedStyleMap"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getAnimations)
 */
   @send
-  external getAnimations: (T.t, ~options: DomTypes.getAnimationsOptions=?) => array<Animation.t> =
+  external getAnimations: (T.t, ~options: DOM.getAnimationsOptions=?) => array<Animation.t> =
     "getAnimations"
 
   /**
@@ -129,13 +504,13 @@ Returns the qualified names of all element's attributes. Can contain duplicates.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNode)
 */
   @send
-  external getAttributeNode: (T.t, string) => DomTypes.attr = "getAttributeNode"
+  external getAttributeNode: (T.t, string) => DOM.attr = "getAttributeNode"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNodeNS)
 */
   @send
-  external getAttributeNodeNS: (T.t, ~namespace: string, ~localName: string) => DomTypes.attr =
+  external getAttributeNodeNS: (T.t, ~namespace: string, ~localName: string) => DOM.attr =
     "getAttributeNodeNS"
 
   /**
@@ -150,27 +525,27 @@ Returns element's attribute whose namespace is namespace and local name is local
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect)
 */
   @send
-  external getBoundingClientRect: T.t => DomTypes.domRect = "getBoundingClientRect"
+  external getBoundingClientRect: T.t => DOM.domRect = "getBoundingClientRect"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getClientRects)
 */
   @send
-  external getClientRects: T.t => DomTypes.domRectList = "getClientRects"
+  external getClientRects: T.t => DOM.domRectList = "getClientRects"
 
   /**
 Returns a HTMLCollection of the elements in the object on which the method was invoked (a document or an element) that have all the classes given by classNames. The classNames argument is interpreted as a space-separated list of classes.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getElementsByClassName)
 */
   @send
-  external getElementsByClassName: (T.t, string) => DomTypes.htmlCollection<DomTypes.element> =
+  external getElementsByClassName: (T.t, string) => DOM.htmlCollection<DOM.element> =
     "getElementsByClassName"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagName)
 */
   @send
-  external getElementsByTagName: (T.t, string) => DomTypes.htmlCollection<DomTypes.element> =
+  external getElementsByTagName: (T.t, string) => DOM.htmlCollection<DOM.element> =
     "getElementsByTagName"
 
   /**
@@ -178,16 +553,16 @@ Returns a HTMLCollection of the elements in the object on which the method was i
 */
   @send
   external getElementsByTagNameNS: (
-    DomTypes.element,
+    DOM.element,
     ~namespace: string,
     ~localName: string,
-  ) => DomTypes.htmlCollection<DomTypes.element> = "getElementsByTagNameNS"
+  ) => DOM.htmlCollection<DOM.element> = "getElementsByTagNameNS"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getHTML)
 */
   @send
-  external getHTML: (T.t, ~options: DomTypes.getHTMLOptions=?) => string = "getHTML"
+  external getHTML: (T.t, ~options: DOM.getHTMLOptions=?) => string = "getHTML"
 
   /**
 Returns true if element has an attribute whose qualified name is qualifiedName, and false otherwise.
@@ -222,22 +597,22 @@ Returns true if element has attributes, and false otherwise.
   @send
   external insertAdjacentElement: (
     T.t,
-    ~where: DomTypes.insertPosition,
-    ~element: DomTypes.element,
-  ) => DomTypes.element = "insertAdjacentElement"
+    ~where: DOM.insertPosition,
+    ~element: DOM.element,
+  ) => DOM.element = "insertAdjacentElement"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentHTML)
 */
   @send
-  external insertAdjacentHTML: (T.t, ~position: DomTypes.insertPosition, ~string: string) => unit =
+  external insertAdjacentHTML: (T.t, ~position: DOM.insertPosition, ~string: string) => unit =
     "insertAdjacentHTML"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentText)
 */
   @send
-  external insertAdjacentText: (T.t, ~where: DomTypes.insertPosition, ~data: string) => unit =
+  external insertAdjacentText: (T.t, ~where: DOM.insertPosition, ~data: string) => unit =
     "insertAdjacentText"
 
   /**
@@ -254,7 +629,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/prepend)
 */
   @send
-  external prepend: (T.t, DomTypes.node) => unit = "prepend"
+  external prepend: (T.t, DOM.node) => unit = "prepend"
 
   /**
 Inserts nodes before the first child of node, while replacing strings in nodes with equivalent Text nodes.
@@ -270,14 +645,14 @@ Returns the first element that is a descendant of node that matches selectors.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/querySelector)
 */
   @send
-  external querySelector: (T.t, string) => Null.t<DomTypes.element> = "querySelector"
+  external querySelector: (T.t, string) => Null.t<DOM.element> = "querySelector"
 
   /**
 Returns all element descendants of node that match selectors.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll)
 */
   @send
-  external querySelectorAll: (T.t, string) => DomTypes.nodeList<DomTypes.element> =
+  external querySelectorAll: (T.t, string) => DOM.nodeList<DOM.element> =
     "querySelectorAll"
 
   /**
@@ -304,7 +679,7 @@ Removes element's first attribute whose qualified name is qualifiedName.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/removeAttributeNode)
 */
   @send
-  external removeAttributeNode: (T.t, DomTypes.attr) => DomTypes.attr = "removeAttributeNode"
+  external removeAttributeNode: (T.t, DOM.attr) => DOM.attr = "removeAttributeNode"
 
   /**
 Removes element's attribute whose namespace is namespace and local name is localName.
@@ -321,7 +696,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
 */
   @send
-  external replaceChildren: (T.t, DomTypes.node) => unit = "replaceChildren"
+  external replaceChildren: (T.t, DOM.node) => unit = "replaceChildren"
 
   /**
 Replace all children of node with nodes, while replacing strings in nodes with equivalent Text nodes.
@@ -339,7 +714,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CharacterData/replaceWith)
 */
   @send
-  external replaceWith: (T.t, DomTypes.node) => unit = "replaceWith"
+  external replaceWith: (T.t, DOM.node) => unit = "replaceWith"
 
   /**
 Replaces node with nodes, while replacing strings in nodes with equivalent Text nodes.
@@ -357,21 +732,21 @@ When supplied, options's navigationUI member indicates whether showing navigatio
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
 */
   @send
-  external requestFullscreen: (T.t, ~options: DomTypes.fullscreenOptions=?) => promise<unit> =
+  external requestFullscreen: (T.t, ~options: DOM.fullscreenOptions=?) => promise<unit> =
     "requestFullscreen"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock)
 */
   @send
-  external requestPointerLock: (T.t, ~options: DomTypes.pointerLockOptions=?) => promise<unit> =
+  external requestPointerLock: (T.t, ~options: DOM.pointerLockOptions=?) => promise<unit> =
     "requestPointerLock"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scroll)
 */
   @send
-  external scroll: (T.t, ~options: DomTypes.scrollToOptions=?) => unit = "scroll"
+  external scroll: (T.t, ~options: DOM.scrollToOptions=?) => unit = "scroll"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scroll)
@@ -383,7 +758,7 @@ When supplied, options's navigationUI member indicates whether showing navigatio
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scrollBy)
 */
   @send
-  external scrollBy: (T.t, ~options: DomTypes.scrollToOptions=?) => unit = "scrollBy"
+  external scrollBy: (T.t, ~options: DOM.scrollToOptions=?) => unit = "scrollBy"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scrollBy)
@@ -431,14 +806,14 @@ element->Element.scrollIntoViewWithOptions({ behavior: DOMAPI.Smooth })
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scrollIntoView)
 */
   @send
-  external scrollIntoViewWithOptions: (T.t, DomTypes.scrollIntoViewOptions) => unit =
+  external scrollIntoViewWithOptions: (T.t, DOM.scrollIntoViewOptions) => unit =
     "scrollIntoView"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scrollTo)
 */
   @send
-  external scrollTo: (T.t, ~options: DomTypes.scrollToOptions=?) => unit = "scrollTo"
+  external scrollTo: (T.t, ~options: DOM.scrollToOptions=?) => unit = "scrollTo"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scrollTo)
@@ -457,13 +832,13 @@ Sets the value of element's first attribute whose qualified name is qualifiedNam
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNode)
 */
   @send
-  external setAttributeNode: (T.t, DomTypes.attr) => DomTypes.attr = "setAttributeNode"
+  external setAttributeNode: (T.t, DOM.attr) => DOM.attr = "setAttributeNode"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNodeNS)
 */
   @send
-  external setAttributeNodeNS: (T.t, DomTypes.attr) => DomTypes.attr = "setAttributeNodeNS"
+  external setAttributeNodeNS: (T.t, DOM.attr) => DOM.attr = "setAttributeNodeNS"
 
   /**
 Sets the value of element's attribute whose namespace is namespace and local name is localName to value.
@@ -471,7 +846,7 @@ Sets the value of element's attribute whose namespace is namespace and local nam
 */
   @send
   external setAttributeNS: (
-    DomTypes.element,
+    DOM.element,
     ~namespace: string,
     ~qualifiedName: string,
     ~value: string,
@@ -500,6 +875,6 @@ Returns true if qualifiedName is now present, and false otherwise.
     "toggleAttribute"
 }
 
-include Impl({type t = DomTypes.element})
+include Impl({type t = DOM.element})
 
 let isInstanceOf = (_: 't): bool => %raw(`param instanceof Element`)
