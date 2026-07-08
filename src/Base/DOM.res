@@ -453,7 +453,7 @@ type offscreenRenderingContext = unknown
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DocumentTimeline/currentTime)
     */
-    currentTime: Null.t<float>,
+  currentTime: Null.t<float>,
 }
 
 /**
@@ -7579,4 +7579,3 @@ Can be set, to change the selection.
     */
   mutable selectedIndex: int,
 }
-
