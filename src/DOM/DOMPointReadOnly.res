@@ -12,10 +12,8 @@ external make: (~x: float=?, ~y: float=?, ~z: float=?, ~w: float=?) => DOM.domPo
 external fromPoint: (~other: DOM.domPointInit=?) => DOM.domPointReadOnly = "fromPoint"
 
 @send
-external matrixTransform: (
-  DOM.domPointReadOnly,
-  ~matrix: DOM.domMatrixInit=?,
-) => DOM.domPoint = "matrixTransform"
+external matrixTransform: (DOM.domPointReadOnly, ~matrix: DOM.domMatrixInit=?) => DOM.domPoint =
+  "matrixTransform"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/toJSON)

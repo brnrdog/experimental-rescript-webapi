@@ -47,4 +47,3 @@ type t = {
 }
 
 include HTMLElement.Impl({type t = t})
-

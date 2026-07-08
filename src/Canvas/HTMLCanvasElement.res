@@ -74,8 +74,7 @@ Returns the content of the current canvas as an image that you can use as a sour
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toDataURL)
 */
 @send
-external toDataURL: (t, ~type_: string=?, ~quality: JSON.t=?) => string =
-  "toDataURL"
+external toDataURL: (t, ~type_: string=?, ~quality: JSON.t=?) => string = "toDataURL"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob)
@@ -92,14 +91,11 @@ external toBlob: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen)
 */
 @send
-external transferControlToOffscreen: t => CanvasTypes.offscreenCanvas =
-  "transferControlToOffscreen"
+external transferControlToOffscreen: t => CanvasTypes.offscreenCanvas = "transferControlToOffscreen"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/captureStream)
 */
 @send
-external captureStream: (
-  t,
-  ~frameRequestRate: float=?,
-) => MediaCaptureAndStreamsTypes.mediaStream = "captureStream"
+external captureStream: (t, ~frameRequestRate: float=?) => MediaCaptureAndStreamsTypes.mediaStream =
+  "captureStream"

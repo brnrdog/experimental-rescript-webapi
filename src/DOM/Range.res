@@ -72,8 +72,7 @@ external selectNodeContents: (t, DOMTree.node) => unit = "selectNodeContents"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/compareBoundaryPoints)
 */
 @send
-external compareBoundaryPoints: (t, ~how: int, ~sourceRange: t) => int =
-  "compareBoundaryPoints"
+external compareBoundaryPoints: (t, ~how: int, ~sourceRange: t) => int = "compareBoundaryPoints"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/deleteContents)
@@ -121,8 +120,7 @@ external detach: t => unit = "detach"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/isPointInRange)
 */
 @send
-external isPointInRange: (t, ~node: DOMTree.node, ~offset: int) => bool =
-  "isPointInRange"
+external isPointInRange: (t, ~node: DOMTree.node, ~offset: int) => bool = "isPointInRange"
 
 /**
 Returns −1 if the point is before the range, 0 if the point is in the range, and 1 if the point is after the range.

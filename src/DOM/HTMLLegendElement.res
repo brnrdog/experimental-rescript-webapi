@@ -12,4 +12,3 @@ type t = private {
 }
 
 include HTMLElement.Impl({type t = t})
-

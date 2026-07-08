@@ -1,4 +1,3 @@
-
 module Impl = (
   T: {
     type t
@@ -8,17 +7,14 @@ module Impl = (
 
   external asNode: T.t => DOMTree.node = "%identity"
 
-
   type getRootNodeOptions = {mutable composed?: bool}
 
-  
   /**
 Returns node's root.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/getRootNode)
 */
   @send
-  external getRootNode: (T.t, ~options: getRootNodeOptions=?) => DOMTree.node =
-    "getRootNode"
+  external getRootNode: (T.t, ~options: getRootNodeOptions=?) => DOMTree.node = "getRootNode"
 
   /**
 Returns whether node has children.

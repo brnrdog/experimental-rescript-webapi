@@ -112,10 +112,8 @@ let frame = VideoFrame.fromVideoFrame(~image=otherFrame)
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/VideoFrame)
 */
 @new
-external fromVideoFrame: (
-  ~image: DOM.videoFrame,
-  ~init: DOM.videoFrameInit=?,
-) => DOM.videoFrame = "VideoFrame"
+external fromVideoFrame: (~image: DOM.videoFrame, ~init: DOM.videoFrameInit=?) => DOM.videoFrame =
+  "VideoFrame"
 
 /**
 `fromArrayBuffer(~data: ArrayBuffer.t, ~init: videoFrameBufferInit)`
@@ -166,19 +164,15 @@ let frame =
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/VideoFrame)
 */
 @new
-external fromDataView: (
-  ~data: DataView.t,
-  ~init: DOM.videoFrameBufferInit,
-) => DOM.videoFrame = "VideoFrame"
+external fromDataView: (~data: DataView.t, ~init: DOM.videoFrameBufferInit) => DOM.videoFrame =
+  "VideoFrame"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/VideoFrame/allocationSize)
 */
 @send
-external allocationSize: (
-  DOM.videoFrame,
-  ~options: DOM.videoFrameCopyToOptions=?,
-) => int = "allocationSize"
+external allocationSize: (DOM.videoFrame, ~options: DOM.videoFrameCopyToOptions=?) => int =
+  "allocationSize"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/VideoFrame/copyTo)

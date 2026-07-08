@@ -78,8 +78,7 @@ external collapse: (t, ~node: DOMTree.node, ~offset: int=?) => unit = "collapse"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/collapse)
 */
 @send
-external setPosition: (t, ~node: DOMTree.node, ~offset: int=?) => unit =
-  "setPosition"
+external setPosition: (t, ~node: DOMTree.node, ~offset: int=?) => unit = "setPosition"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/collapseToStart)
@@ -121,12 +120,8 @@ external selectAllChildren: (t, DOMTree.node) => unit = "selectAllChildren"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/modify)
 */
 @send
-external modify: (
-  t,
-  ~alter: string=?,
-  ~direction: string=?,
-  ~granularity: string=?,
-) => unit = "modify"
+external modify: (t, ~alter: string=?, ~direction: string=?, ~granularity: string=?) => unit =
+  "modify"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/deleteFromDocument)
@@ -138,8 +133,5 @@ external deleteFromDocument: t => unit = "deleteFromDocument"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/containsNode)
 */
 @send
-external containsNode: (
-  t,
-  ~node: DOMTree.node,
-  ~allowPartialContainment: bool=?,
-) => bool = "containsNode"
+external containsNode: (t, ~node: DOMTree.node, ~allowPartialContainment: bool=?) => bool =
+  "containsNode"

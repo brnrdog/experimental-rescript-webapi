@@ -15,7 +15,7 @@ type playbackDirection =
   | @as("alternate-reverse") AlternateReverse
   | @as("normal") Normal
   | @as("reverse") Reverse
-  
+
 type effectTiming = {
   mutable fill?: fillMode,
   mutable iterationStart?: float,

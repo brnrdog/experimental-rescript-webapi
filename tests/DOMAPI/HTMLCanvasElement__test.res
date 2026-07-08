@@ -1,16 +1,13 @@
 external toHTMLCanvasElement: null<DOMTree.element> => HTMLCanvasElement.t = "%identity"
 @set
-external setFillStyle: (DOM.canvasRenderingContext2D, CanvasTypes.fillStyle) => unit =
-  "fillStyle"
+external setFillStyle: (DOM.canvasRenderingContext2D, CanvasTypes.fillStyle) => unit = "fillStyle"
 @get
 external getFillStyle: DOM.canvasRenderingContext2D => CanvasTypes.fillStyle = "fillStyle"
 @set
 external setFont: (DOM.canvasRenderingContext2D, string) => unit = "font"
 @set
-external setTextBaseline: (
-  DOM.canvasRenderingContext2D,
-  CanvasTypes.canvasTextBaseline,
-) => unit = "textBaseline"
+external setTextBaseline: (DOM.canvasRenderingContext2D, CanvasTypes.canvasTextBaseline) => unit =
+  "textBaseline"
 
 let myCanvas: HTMLCanvasElement.t =
   DomGlobal.document->Document.getElementById("myCanvas")->toHTMLCanvasElement

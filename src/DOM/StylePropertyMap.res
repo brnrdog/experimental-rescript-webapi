@@ -16,11 +16,7 @@ external has: (DOM.stylePropertyMap, string) => bool = "has"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/set)
 */
 @send
-external set: (
-  DOM.stylePropertyMap,
-  ~property: string,
-  ~values: DOM.cssStyleValue,
-) => unit = "set"
+external set: (DOM.stylePropertyMap, ~property: string, ~values: DOM.cssStyleValue) => unit = "set"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/set)
@@ -32,11 +28,8 @@ external set2: (DOM.stylePropertyMap, ~property: string, ~values: string) => uni
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/append)
 */
 @send
-external append: (
-  DOM.stylePropertyMap,
-  ~property: string,
-  ~values: DOM.cssStyleValue,
-) => unit = "append"
+external append: (DOM.stylePropertyMap, ~property: string, ~values: DOM.cssStyleValue) => unit =
+  "append"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/append)

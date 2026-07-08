@@ -1,3 +1,5 @@
+@@warning("-30")
+
 type shadowRootMode =
   | @as("closed") Closed
   | @as("open") Open

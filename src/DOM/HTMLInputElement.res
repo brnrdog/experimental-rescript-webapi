@@ -294,12 +294,8 @@ Sets the start and end positions of a selection in a text field.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setSelectionRange)
 */
 @send
-external setSelectionRange: (
-  t,
-  ~start: int,
-  ~end: int,
-  ~direction: string=?,
-) => unit = "setSelectionRange"
+external setSelectionRange: (t, ~start: int, ~end: int, ~direction: string=?) => unit =
+  "setSelectionRange"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/showPicker)

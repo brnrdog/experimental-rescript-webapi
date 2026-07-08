@@ -78,10 +78,8 @@ external setTransform: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setTransform)
 */
 @send
-external setTransform2: (
-  DOM.canvasRenderingContext2D,
-  ~transform: DOM.domMatrix2DInit=?,
-) => unit = "setTransform"
+external setTransform2: (DOM.canvasRenderingContext2D, ~transform: DOM.domMatrix2DInit=?) => unit =
+  "setTransform"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/resetTransform)
@@ -242,10 +240,8 @@ external beginPath: DOM.canvasRenderingContext2D => unit = "beginPath"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fill)
 */
 @send
-external fill: (
-  DOM.canvasRenderingContext2D,
-  ~fillRule: CanvasTypes.canvasFillRule=?,
-) => unit = "fill"
+external fill: (DOM.canvasRenderingContext2D, ~fillRule: CanvasTypes.canvasFillRule=?) => unit =
+  "fill"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fill)
@@ -273,10 +269,8 @@ external stroke2: (DOM.canvasRenderingContext2D, CanvasTypes.path2D) => unit = "
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/clip)
 */
 @send
-external clip: (
-  DOM.canvasRenderingContext2D,
-  ~fillRule: CanvasTypes.canvasFillRule=?,
-) => unit = "clip"
+external clip: (DOM.canvasRenderingContext2D, ~fillRule: CanvasTypes.canvasFillRule=?) => unit =
+  "clip"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/clip)
@@ -679,10 +673,8 @@ external createImageData: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createImageData)
 */
 @send
-external createImageData2: (
-  DOM.canvasRenderingContext2D,
-  DOM.imageData,
-) => DOM.imageData = "createImageData"
+external createImageData2: (DOM.canvasRenderingContext2D, DOM.imageData) => DOM.imageData =
+  "createImageData"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData)
@@ -796,13 +788,8 @@ external arcTo: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/rect)
 */
 @send
-external rect: (
-  DOM.canvasRenderingContext2D,
-  ~x: float,
-  ~y: float,
-  ~w: float,
-  ~h: float,
-) => unit = "rect"
+external rect: (DOM.canvasRenderingContext2D, ~x: float, ~y: float, ~w: float, ~h: float) => unit =
+  "rect"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/roundRect)

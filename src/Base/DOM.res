@@ -33,7 +33,6 @@ type domStringList = {
 type window = private {}
 external window: window = "window"
 
-
 type autoFillBase =
   | @as("off") Off
   | @as("on") On
@@ -2293,7 +2292,6 @@ TODO: mark as private once mutating fields of private records is allowed
   mutable cssFloat: string,
 }
 
-
 /**
 NodeList objects are collections of nodes, usually returned by properties such as Node.childNodes and methods such as document.querySelectorAll().
 [See NodeList on MDN](https://developer.mozilla.org/docs/Web/API/NodeList)
@@ -2305,8 +2303,6 @@ NodeList objects are collections of nodes, usually returned by properties such a
     */
   length: int,
 }
-
-
 
 /**
 [See DOMRectReadOnly on MDN](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly)
@@ -2460,16 +2456,15 @@ type fileList = private {
   length: int,
 }
 
-
 /**
 A collection of Attr objects. Objects inside a NamedNodeMap are not in any particular order, unlike NodeList, although they may be accessed by an index as in an array.
 [See NamedNodeMap on MDN](https://developer.mozilla.org/docs/Web/API/NamedNodeMap)
 */
 type namedNodeMap = private {
-/**
+  /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/length)
 */
-length: int,
+  length: int,
 }
 
 type structuredSerializeOptions = {mutable transfer?: array<Dict.t<string>>}

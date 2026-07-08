@@ -39,8 +39,7 @@ Creates an empty caption element in the table.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createCaption)
 */
 @send
-external createCaption: t => HTMLTableCaptionElement.t =
-  "createCaption"
+external createCaption: t => HTMLTableCaptionElement.t = "createCaption"
 
 /**
 Deletes the caption element and its contents from the table.
@@ -90,8 +89,7 @@ Creates a new row (tr) in the table, and adds the row to the rows collection.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/insertRow)
 */
 @send
-external insertRow: (t, ~index: int=?) => HTMLTableRowElement.t =
-  "insertRow"
+external insertRow: (t, ~index: int=?) => HTMLTableRowElement.t = "insertRow"
 
 /**
 Removes the specified row (tr) from the element and from the rows collection.

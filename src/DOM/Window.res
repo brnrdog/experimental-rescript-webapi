@@ -304,8 +304,7 @@ Executes a function after a delay given in milliseconds expires.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/setTimeout)
 */
 @send
-external setTimeout: (t, ~handler: unit => unit, ~timeout: int=?) => DOM.timeoutId =
-  "setTimeout"
+external setTimeout: (t, ~handler: unit => unit, ~timeout: int=?) => DOM.timeoutId = "setTimeout"
 
 /**
 Cancels the execution of a timeout created with setTimeout.

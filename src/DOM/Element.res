@@ -1,4 +1,3 @@
-
 module Impl = (
   T: {
     type t
@@ -109,8 +108,10 @@ Returns the first (starting at element) inclusive ancestor that matches selector
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getAnimations)
 */
   @send
-  external getAnimations: (T.t, ~options: AnimationEffect.getAnimationsOptions=?) => array<Animation.t> =
-    "getAnimations"
+  external getAnimations: (
+    T.t,
+    ~options: AnimationEffect.getAnimationsOptions=?,
+  ) => array<Animation.t> = "getAnimations"
 
   /**
 Returns element's first attribute whose qualified name is qualifiedName, and null if there is no such attribute otherwise.
@@ -278,8 +279,7 @@ Returns all element descendants of node that match selectors.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll)
 */
   @send
-  external querySelectorAll: (T.t, string) => DOM.nodeList<DOMTree.element> =
-    "querySelectorAll"
+  external querySelectorAll: (T.t, string) => DOM.nodeList<DOMTree.element> = "querySelectorAll"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/releasePointerCapture)
@@ -432,8 +432,7 @@ element->Element.scrollIntoViewWithOptions({ behavior: DOMAPI.Smooth })
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scrollIntoView)
 */
   @send
-  external scrollIntoViewWithOptions: (T.t, DOM.scrollIntoViewOptions) => unit =
-    "scrollIntoView"
+  external scrollIntoViewWithOptions: (T.t, DOM.scrollIntoViewOptions) => unit = "scrollIntoView"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scrollTo)

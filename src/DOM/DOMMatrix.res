@@ -54,12 +54,8 @@ external fromFloat64Array: Float64Array.t => DOM.domMatrixReadOnly = "fromFloat6
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/translate)
 */
 @send
-external translate: (
-  DOM.domMatrix,
-  ~tx: float=?,
-  ~ty: float=?,
-  ~tz: float=?,
-) => DOM.domMatrix = "translate"
+external translate: (DOM.domMatrix, ~tx: float=?, ~ty: float=?, ~tz: float=?) => DOM.domMatrix =
+  "translate"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/scale)
@@ -85,12 +81,8 @@ external scale3d: (
 ) => DOM.domMatrix = "scale3d"
 
 @send
-external rotate: (
-  DOM.domMatrix,
-  ~rotX: float=?,
-  ~rotY: float=?,
-  ~rotZ: float=?,
-) => DOM.domMatrix = "rotate"
+external rotate: (DOM.domMatrix, ~rotX: float=?, ~rotY: float=?, ~rotZ: float=?) => DOM.domMatrix =
+  "rotate"
 
 @send
 external rotateFromVector: (DOM.domMatrix, ~x: float=?, ~y: float=?) => DOM.domMatrix =
@@ -112,8 +104,7 @@ external skewX: (DOM.domMatrix, ~sx: float=?) => DOM.domMatrix = "skewX"
 external skewY: (DOM.domMatrix, ~sy: float=?) => DOM.domMatrix = "skewY"
 
 @send
-external multiply: (DOM.domMatrix, ~other: DOM.domMatrixInit=?) => DOM.domMatrix =
-  "multiply"
+external multiply: (DOM.domMatrix, ~other: DOM.domMatrixInit=?) => DOM.domMatrix = "multiply"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/flipX)
@@ -128,10 +119,8 @@ external flipY: DOM.domMatrix => DOM.domMatrix = "flipY"
 external inverse: DOM.domMatrix => DOM.domMatrix = "inverse"
 
 @send
-external transformPoint: (
-  DOM.domMatrix,
-  ~point: DOM.domPointInit=?,
-) => DOM.domPoint = "transformPoint"
+external transformPoint: (DOM.domMatrix, ~point: DOM.domPointInit=?) => DOM.domPoint =
+  "transformPoint"
 
 @send
 external toFloat32Array: DOM.domMatrix => array<float> = "toFloat32Array"
@@ -152,24 +141,16 @@ external fromFloat32ArrayD: array<float> => DOM.domMatrix = "fromFloat32Array"
 external fromFloat64ArrayD: Float64Array.t => DOM.domMatrix = "fromFloat64Array"
 
 @send
-external multiplySelf: (
-  DOM.domMatrix,
-  ~other: DOM.domMatrixInit=?,
-) => DOM.domMatrix = "multiplySelf"
+external multiplySelf: (DOM.domMatrix, ~other: DOM.domMatrixInit=?) => DOM.domMatrix =
+  "multiplySelf"
 
 @send
-external preMultiplySelf: (
-  DOM.domMatrix,
-  ~other: DOM.domMatrixInit=?,
-) => DOM.domMatrix = "preMultiplySelf"
+external preMultiplySelf: (DOM.domMatrix, ~other: DOM.domMatrixInit=?) => DOM.domMatrix =
+  "preMultiplySelf"
 
 @send
-external translateSelf: (
-  DOM.domMatrix,
-  ~tx: float=?,
-  ~ty: float=?,
-  ~tz: float=?,
-) => DOM.domMatrix = "translateSelf"
+external translateSelf: (DOM.domMatrix, ~tx: float=?, ~ty: float=?, ~tz: float=?) => DOM.domMatrix =
+  "translateSelf"
 
 @send
 external scaleSelf: (
@@ -200,11 +181,8 @@ external rotateSelf: (
 ) => DOM.domMatrix = "rotateSelf"
 
 @send
-external rotateFromVectorSelf: (
-  DOM.domMatrix,
-  ~x: float=?,
-  ~y: float=?,
-) => DOM.domMatrix = "rotateFromVectorSelf"
+external rotateFromVectorSelf: (DOM.domMatrix, ~x: float=?, ~y: float=?) => DOM.domMatrix =
+  "rotateFromVectorSelf"
 
 @send
 external rotateAxisAngleSelf: (

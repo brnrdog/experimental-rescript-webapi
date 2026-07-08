@@ -7,4 +7,3 @@ type t = private {
 }
 
 include DomHTMLMediaElement.Impl({type t = t})
-

@@ -14,8 +14,7 @@ external getPropertyValue: (DOM.cssStyleDeclaration, string) => string = "getPro
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyPriority)
 */
 @send
-external getPropertyPriority: (DOM.cssStyleDeclaration, string) => string =
-  "getPropertyPriority"
+external getPropertyPriority: (DOM.cssStyleDeclaration, string) => string = "getPropertyPriority"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/setProperty)

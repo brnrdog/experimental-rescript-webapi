@@ -1,4 +1,3 @@
-
 /**
 A <form> element in the WebApiDOM; it allows access to and in some cases modification of aspects of the form, as well as access to its component elements.
 [See HTMLFormElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLFormElement)
@@ -306,7 +305,6 @@ type t = {
     */
   length: int,
 }
-
 
 include HTMLElement.Impl({type t = t})
 

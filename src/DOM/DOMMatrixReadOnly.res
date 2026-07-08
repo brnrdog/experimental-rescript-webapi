@@ -92,11 +92,8 @@ external rotate: (
 ) => DOM.domMatrix = "rotate"
 
 @send
-external rotateFromVector: (
-  DOM.domMatrixReadOnly,
-  ~x: float=?,
-  ~y: float=?,
-) => DOM.domMatrix = "rotateFromVector"
+external rotateFromVector: (DOM.domMatrixReadOnly, ~x: float=?, ~y: float=?) => DOM.domMatrix =
+  "rotateFromVector"
 
 @send
 external rotateAxisAngle: (
@@ -114,10 +111,8 @@ external skewX: (DOM.domMatrixReadOnly, ~sx: float=?) => DOM.domMatrix = "skewX"
 external skewY: (DOM.domMatrixReadOnly, ~sy: float=?) => DOM.domMatrix = "skewY"
 
 @send
-external multiply: (
-  DOM.domMatrixReadOnly,
-  ~other: DOM.domMatrixInit=?,
-) => DOM.domMatrix = "multiply"
+external multiply: (DOM.domMatrixReadOnly, ~other: DOM.domMatrixInit=?) => DOM.domMatrix =
+  "multiply"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/flipX)
@@ -132,10 +127,8 @@ external flipY: DOM.domMatrixReadOnly => DOM.domMatrix = "flipY"
 external inverse: DOM.domMatrixReadOnly => DOM.domMatrix = "inverse"
 
 @send
-external transformPoint: (
-  DOM.domMatrixReadOnly,
-  ~point: DOM.domPointInit=?,
-) => DOM.domPoint = "transformPoint"
+external transformPoint: (DOM.domMatrixReadOnly, ~point: DOM.domPointInit=?) => DOM.domPoint =
+  "transformPoint"
 
 @send
 external toFloat32Array: DOM.domMatrixReadOnly => array<float> = "toFloat32Array"

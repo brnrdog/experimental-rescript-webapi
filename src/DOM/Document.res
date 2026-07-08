@@ -85,7 +85,8 @@ Returns all element descendants of node that match selectors.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll)
 */
 @send
-external querySelectorAll: (DOM.document, string) => DOM.nodeList<DOMTree.element> = "querySelectorAll"
+external querySelectorAll: (DOM.document, string) => DOM.nodeList<DOMTree.element> =
+  "querySelectorAll"
 
 /**
 This method compiles an XPathExpression which can then be used for (repeated) evaluations.
@@ -156,8 +157,11 @@ Creates an instance of the element for the specified tag.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/createElement)
 */
 @send
-external createElement: (DOM.document, string, ~options: elementCreationOptions=?) => DOMTree.element =
-  "createElement"
+external createElement: (
+  DOM.document,
+  string,
+  ~options: elementCreationOptions=?,
+) => DOMTree.element = "createElement"
 
 /**
 Returns an element with namespace namespace. Its namespace prefix will be everything before ":" (U+003E) in qualifiedName or null. Its local name will be everything after ":" (U+003E) in qualifiedName or qualifiedName.
