@@ -4,7 +4,7 @@ Provides special properties and methods (beyond those of the HTMLElement interfa
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
   /**
     Sets or retrieves a WebApiURL to be loaded by the object.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/src)

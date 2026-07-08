@@ -3,17 +3,17 @@
 */
 @send
 external define: (
-  DomTypes.customElementRegistry,
+  DOM.customElementRegistry,
   ~name: string,
-  ~constructor: HTMLElement.t,
-  ~options: DomTypes.elementDefinitionOptions=?,
+  ~constructor: HTML.htmlElement,
+  ~options: DOM.elementDefinitionOptions=?,
 ) => unit = "define"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/getName)
 */
 @send
-external getName: (DomTypes.customElementRegistry, DomTypes.customElementConstructor) => string =
+external getName: (DOM.customElementRegistry, DOM.customElementConstructor) => string =
   "getName"
 
 /**
@@ -21,12 +21,12 @@ external getName: (DomTypes.customElementRegistry, DomTypes.customElementConstru
 */
 @send
 external whenDefined: (
-  DomTypes.customElementRegistry,
+  DOM.customElementRegistry,
   string,
-) => promise<DomTypes.customElementConstructor> = "whenDefined"
+) => promise<DOM.customElementConstructor> = "whenDefined"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/upgrade)
 */
 @send
-external upgrade: (DomTypes.customElementRegistry, DomTypes.node) => unit = "upgrade"
+external upgrade: (DOM.customElementRegistry, Node.t) => unit = "upgrade"

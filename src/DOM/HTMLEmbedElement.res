@@ -218,7 +218,7 @@ type t = {
     Returns the parent element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentElement)
     */
-  parentElement: Null.t<HTMLElement.t>,
+  parentElement: Null.t<HTML.htmlElement>,
   /**
     Returns the children.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/childNodes)

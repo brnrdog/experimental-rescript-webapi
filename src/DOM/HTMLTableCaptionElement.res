@@ -3,7 +3,7 @@ Special properties (beyond the regular HTMLElement interface it also has availab
 [See HTMLTableCaptionElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTableCaptionElement)
 */
 type t = private {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
 }
 
 include HTMLElement.Impl({type t = t})

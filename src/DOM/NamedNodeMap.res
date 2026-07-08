@@ -1,15 +1,4 @@
 /**
-A collection of Attr objects. Objects inside a NamedNodeMap are not in any particular order, unlike NodeList, although they may be accessed by an index as in an array.
-[See NamedNodeMap on MDN](https://developer.mozilla.org/docs/Web/API/NamedNodeMap)
-*/
-type t = private {
-  /**
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/length)
-    */
-  length: int,
-}
-
-/**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/item)
 */
 @send

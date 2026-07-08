@@ -27,7 +27,7 @@ type t = {
     Returns the ValidityState object for internals's target element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/ElementInternals/validity)
     */
-  validity: DomTypes.validityState,
+  validity: DOM.validityState,
   /**
     Returns the error message that would be shown to the user if internals's target element was to be checked for validity.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/ElementInternals/validationMessage)
@@ -225,9 +225,9 @@ Marks internals's target element as suffering from the constraints indicated by 
 @send
 external setValidity: (
   t,
-  ~flags: DomTypes.validityStateFlags=?,
+  ~flags: DOM.validityStateFlags=?,
   ~message: string=?,
-  ~anchor: HTMLElement.t=?,
+  ~anchor: HTML.htmlElement=?,
 ) => unit = "setValidity"
 
 /**

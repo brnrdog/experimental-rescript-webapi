@@ -365,7 +365,7 @@ Gets a collection of objects based on the value of the NAME or ID attribute.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getElementsByName)
 */
 @send
-external getElementsByName: (DOM.document, string) => DOM.nodeList<HTMLElement.t> =
+external getElementsByName: (DOM.document, string) => DOM.nodeList<HTML.htmlElement> =
   "getElementsByName"
 
 /**

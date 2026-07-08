@@ -11,5 +11,5 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sheet)
     */
-  sheet: Null.t<DomTypes.cssStyleSheet>,
+  sheet: Null.t<DOM.cssStyleSheet>,
 }

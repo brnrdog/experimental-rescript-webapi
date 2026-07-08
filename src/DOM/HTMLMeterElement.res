@@ -4,7 +4,7 @@ The HTML <meter> elements expose the HTMLMeterElement interface, which provides 
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/value)
     */

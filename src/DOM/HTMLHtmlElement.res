@@ -3,7 +3,7 @@ Serves as the root node for a given HTML document. This object inherits the prop
 [See HTMLHtmlElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLHtmlElement)
 */
 type t = private {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
 }
 
 include HTMLElement.Impl({type t = t})

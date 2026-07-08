@@ -3,7 +3,7 @@ Exposes specific properties and methods (beyond those defined by regular HTMLEle
 [See HTMLLIElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLLIElement)
 */
 type t = private {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
 }
 
 include HTMLElement.Impl({type t = t})

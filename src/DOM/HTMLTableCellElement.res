@@ -4,7 +4,7 @@ Provides special properties and methods (beyond the regular HTMLElement interfac
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
   /**
     Sets or retrieves the number columns in the table that the object should span.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/colSpan)

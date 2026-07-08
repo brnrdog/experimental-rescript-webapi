@@ -3,7 +3,7 @@ A <span> element and derives from the HTMLElement interface, but without impleme
 [See HTMLSpanElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLSpanElement)
 */
 type t = private {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
 }
 
 include HTMLElement.Impl({type t = t})

@@ -39,7 +39,7 @@ type t = {
     Returns the parent element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentElement)
     */
-  parentElement: Null.t<HTMLElement.t>,
+  parentElement: Null.t<HTML.htmlElement>,
   /**
     Returns the children.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
@@ -118,7 +118,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DocumentFragment/append)
 */
   @send
-  external append: (T.t, DomTypes.node) => unit = "append"
+  external append: (T.t, Node.t) => unit = "append"
 
   /**
 Inserts nodes after the last child of node, while replacing strings in nodes with equivalent Text nodes.
@@ -143,7 +143,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DocumentFragment/prepend)
 */
   @send
-  external prepend: (T.t, DomTypes.node) => unit = "prepend"
+  external prepend: (T.t, Node.t) => unit = "prepend"
 
   /**
 Inserts nodes before the first child of node, while replacing strings in nodes with equivalent Text nodes.
@@ -166,7 +166,7 @@ Returns all element descendants of node that match selectors.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DocumentFragment/querySelectorAll)
 */
   @send
-  external querySelectorAll: (T.t, string) => DomTypes.nodeList<Element.t> =
+  external querySelectorAll: (T.t, string) => Node.tList<Element.t> =
     "querySelectorAll"
 
   /**
@@ -176,7 +176,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DocumentFragment/replaceChildren)
 */
   @send
-  external replaceChildren: (T.t, DomTypes.node) => unit = "replaceChildren"
+  external replaceChildren: (T.t, Node.t) => unit = "replaceChildren"
 
   /**
 Replace all children of node with nodes, while replacing strings in nodes with equivalent Text nodes.

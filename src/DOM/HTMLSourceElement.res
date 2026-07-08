@@ -4,7 +4,7 @@ Provides special properties (beyond the regular HTMLElement object interface it 
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/width)
     */

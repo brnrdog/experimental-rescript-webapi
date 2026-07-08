@@ -4,7 +4,7 @@ Provides special properties (beyond those defined on the regular HTMLElement int
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLOListElement/reversed)
     */

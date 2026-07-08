@@ -4,7 +4,7 @@ Provides special properties and methods (beyond those on the HTMLElement interfa
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
   /**
     Sets or retrieves the WebApiURL that references the data of the object.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/data)

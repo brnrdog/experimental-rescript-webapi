@@ -2,19 +2,19 @@
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/item)
 */
 @send
-external item: (DomTypes.cssStyleDeclaration, int) => string = "item"
+external item: (DOM.cssStyleDeclaration, int) => string = "item"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyValue)
 */
 @send
-external getPropertyValue: (DomTypes.cssStyleDeclaration, string) => string = "getPropertyValue"
+external getPropertyValue: (DOM.cssStyleDeclaration, string) => string = "getPropertyValue"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyPriority)
 */
 @send
-external getPropertyPriority: (DomTypes.cssStyleDeclaration, string) => string =
+external getPropertyPriority: (DOM.cssStyleDeclaration, string) => string =
   "getPropertyPriority"
 
 /**
@@ -22,7 +22,7 @@ external getPropertyPriority: (DomTypes.cssStyleDeclaration, string) => string =
 */
 @send
 external setProperty: (
-  DomTypes.cssStyleDeclaration,
+  DOM.cssStyleDeclaration,
   ~property: string,
   ~value: string,
   ~priority: string=?,
@@ -32,4 +32,4 @@ external setProperty: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/removeProperty)
 */
 @send
-external removeProperty: (DomTypes.cssStyleDeclaration, string) => string = "removeProperty"
+external removeProperty: (DOM.cssStyleDeclaration, string) => string = "removeProperty"

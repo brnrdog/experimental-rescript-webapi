@@ -1,18 +1,18 @@
-external toHTMLCanvasElement: null<Element.t> => DomTypes.htmlCanvasElement = "%identity"
+external toHTMLCanvasElement: null<Element.t> => HTMLCanvasElement.t = "%identity"
 @set
-external setFillStyle: (DomTypes.canvasRenderingContext2D, CanvasTypes.fillStyle) => unit =
+external setFillStyle: (DOM.canvasRenderingContext2D, CanvasTypes.fillStyle) => unit =
   "fillStyle"
 @get
-external getFillStyle: DomTypes.canvasRenderingContext2D => CanvasTypes.fillStyle = "fillStyle"
+external getFillStyle: DOM.canvasRenderingContext2D => CanvasTypes.fillStyle = "fillStyle"
 @set
-external setFont: (DomTypes.canvasRenderingContext2D, string) => unit = "font"
+external setFont: (DOM.canvasRenderingContext2D, string) => unit = "font"
 @set
 external setTextBaseline: (
-  DomTypes.canvasRenderingContext2D,
+  DOM.canvasRenderingContext2D,
   CanvasTypes.canvasTextBaseline,
 ) => unit = "textBaseline"
 
-let myCanvas: DomTypes.htmlCanvasElement =
+let myCanvas: HTMLCanvasElement.t =
   DomGlobal.document->Document.getElementById("myCanvas")->toHTMLCanvasElement
 let ctx = myCanvas->HTMLCanvasElement.getContext2D
 
@@ -30,7 +30,7 @@ switch ctx->getFillStyle->FillStyle.decode {
 | FillStyle.CanvasPattern(_) => Console.log("CanvasPattern")
 }
 
-let img: DomTypes.htmlImageElement = DomGlobal.document->Document.createElement("img")->Obj.magic
+let img: HTMLImageElement.t = DomGlobal.document->Document.createElement("img")->Obj.magic
 ctx->CanvasRenderingContext2D.drawImageWithDimensions(
   ~image=img,
   ~dx=0.,

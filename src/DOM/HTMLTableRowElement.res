@@ -3,7 +3,7 @@ Provides special properties and methods (beyond the HTMLElement interface it als
 [See HTMLTableRowElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement)
 */
 type t = private {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
   /**
     Retrieves the position of the object in the rows collection for the table.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/rowIndex)

@@ -10,7 +10,7 @@ Adds to HTMLElement the properties and methods needed to support basic media-rel
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
   /**
     Returns an object representing the current error state of the audio or video element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/error)

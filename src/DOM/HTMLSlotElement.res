@@ -217,7 +217,7 @@ type t = {
     Returns the parent element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentElement)
     */
-  parentElement: Null.t<HTMLElement.t>,
+  parentElement: Null.t<HTML.htmlElement>,
   /**
     Returns the children.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
@@ -267,8 +267,8 @@ include HTMLElement.Impl({type t = t})
 @send
 external assignedNodes: (
   t,
-  ~options: DomTypes.assignedNodesOptions=?,
-) => array<DomTypes.node> = "assignedNodes"
+  ~options: DOM.assignedNodesOptions=?,
+) => array<Node.t> = "assignedNodes"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assignedElements)
@@ -276,7 +276,7 @@ external assignedNodes: (
 @send
 external assignedElements: (
   t,
-  ~options: DomTypes.assignedNodesOptions=?,
+  ~options: DOM.assignedNodesOptions=?,
 ) => array<Element.t> = "assignedElements"
 
 /**

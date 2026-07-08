@@ -4,7 +4,7 @@ Provides special properties and methods for manipulating the layout and presenta
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/autocomplete)
     */
@@ -162,7 +162,7 @@ external setRangeText2: (
   ~replacement: string,
   ~start: int,
   ~end: int,
-  ~selectionMode: DomTypes.selectionMode=?,
+  ~selectionMode: DOM.selectionMode=?,
 ) => unit = "setRangeText"
 
 /**

@@ -4,7 +4,7 @@ Reference information for external resources and the relationship of those resou
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
   /**
     Sets or retrieves a destination WebApiURL or an anchor point.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/href)

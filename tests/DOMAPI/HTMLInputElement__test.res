@@ -1,5 +1,5 @@
-external toHTMLInputElement: Element.t => DomTypes.htmlInputElement = "%identity"
+external toHTMLInputElement: Element.t => HTMLInputElement.t = "%identity"
 
-let input: DomTypes.htmlInputElement =
+let input: HTMLInputElement.t =
   DomGlobal.document->Document.createElement("input")->toHTMLInputElement
 let value = input.value

@@ -3,7 +3,7 @@ Provides special properties (beyond the regular HTMLElement interface it also ha
 [See HTMLDivElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLDivElement)
 */
 type t = private {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
 }
 
 include HTMLElement.Impl({type t = t})

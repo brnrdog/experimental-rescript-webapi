@@ -4,7 +4,7 @@ Provides special properties and methods for manipulating the options, layout, an
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
   /**
     Sets or retrieves a comma-separated list of content types.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/accept)
@@ -283,7 +283,7 @@ external setRangeText2: (
   ~replacement: string,
   ~start: int,
   ~end: int,
-  ~selectionMode: DomTypes.selectionMode=?,
+  ~selectionMode: DOM.selectionMode=?,
 ) => unit = "setRangeText"
 
 /**

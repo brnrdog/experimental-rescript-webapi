@@ -6,11 +6,11 @@ type t = private {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/NodeIterator/root)
     */
-  root: DomTypes.node,
+  root: Node.t,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/NodeIterator/referenceNode)
     */
-  referenceNode: DomTypes.node,
+  referenceNode: Node.t,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/NodeIterator/pointerBeforeReferenceNode)
     */
@@ -29,10 +29,10 @@ type t = private {
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/NodeIterator/nextNode)
 */
 @send
-external nextNode: t => DomTypes.node = "nextNode"
+external nextNode: t => Node.t = "nextNode"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/NodeIterator/previousNode)
 */
 @send
-external previousNode: t => DomTypes.node = "previousNode"
+external previousNode: t => Node.t = "previousNode"

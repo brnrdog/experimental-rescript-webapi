@@ -4,7 +4,7 @@ Provides properties and methods (beyond the regular HTMLElement interface it als
 TODO: mark as private once mutating fields of private records is allowed
 */
 type rec t = {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/disabled)
     */

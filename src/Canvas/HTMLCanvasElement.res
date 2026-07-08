@@ -4,7 +4,7 @@ Provides properties and methods for manipulating the layout and presentation of 
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
   /**
     Gets or sets the width of a canvas element on a document.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/width)
@@ -30,7 +30,7 @@ external getContext2D: (
   t,
   @as("2d") _,
   ~options: CanvasTypes.canvasRenderingContext2DSettings=?,
-) => DomTypes.canvasRenderingContext2D = "getContext"
+) => DOM.canvasRenderingContext2D = "getContext"
 
 /**
 Returns an object that provides methods and properties for drawing and manipulating images and graphics on a canvas element in a document. A context object includes information about colors, line widths, fonts, and other graphic parameters that can be drawn on a canvas.

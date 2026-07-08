@@ -2,4 +2,4 @@
 type t = private {}
 
 @send
-external acceptNode: (t, DomTypes.node) => int = "acceptNode"
+external acceptNode: (t, Node.t) => int = "acceptNode"

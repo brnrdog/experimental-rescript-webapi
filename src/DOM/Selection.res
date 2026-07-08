@@ -72,13 +72,13 @@ external empty: t => unit = "empty"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/collapse)
 */
 @send
-external collapse: (t, ~node: DomTypes.node, ~offset: int=?) => unit = "collapse"
+external collapse: (t, ~node: Node.t, ~offset: int=?) => unit = "collapse"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/collapse)
 */
 @send
-external setPosition: (t, ~node: DomTypes.node, ~offset: int=?) => unit =
+external setPosition: (t, ~node: Node.t, ~offset: int=?) => unit =
   "setPosition"
 
 /**
@@ -97,7 +97,7 @@ external collapseToEnd: t => unit = "collapseToEnd"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/extend)
 */
 @send
-external extend: (t, ~node: DomTypes.node, ~offset: int=?) => unit = "extend"
+external extend: (t, ~node: Node.t, ~offset: int=?) => unit = "extend"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/setBaseAndExtent)
@@ -105,9 +105,9 @@ external extend: (t, ~node: DomTypes.node, ~offset: int=?) => unit = "extend"
 @send
 external setBaseAndExtent: (
   t,
-  ~anchorNode: DomTypes.node,
+  ~anchorNode: Node.t,
   ~anchorOffset: int,
-  ~focusNode: DomTypes.node,
+  ~focusNode: Node.t,
   ~focusOffset: int,
 ) => unit = "setBaseAndExtent"
 
@@ -115,7 +115,7 @@ external setBaseAndExtent: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/selectAllChildren)
 */
 @send
-external selectAllChildren: (t, DomTypes.node) => unit = "selectAllChildren"
+external selectAllChildren: (t, Node.t) => unit = "selectAllChildren"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/modify)
@@ -140,6 +140,6 @@ external deleteFromDocument: t => unit = "deleteFromDocument"
 @send
 external containsNode: (
   t,
-  ~node: DomTypes.node,
+  ~node: Node.t,
   ~allowPartialContainment: bool=?,
 ) => bool = "containsNode"

@@ -113,6 +113,7 @@
         "HTMLDataListElement",
         "HTMLDialogElement",
         "HTMLDivElement",
+        "HTML",
         "HTMLElement",
         "HTMLEmbedElement",
         "HTMLFieldSetElement",

@@ -7,7 +7,7 @@ type t = private {
     Returns the node, furthest away from the document, that is an ancestor of both range's start node and end node.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/commonAncestorContainer)
     */
-  commonAncestorContainer: DomTypes.node,
+  commonAncestorContainer: Node.t,
 }
 
 @new
@@ -18,37 +18,37 @@ external asAbstractRange: t => AbstractRange.t = "%identity"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/setStart)
 */
 @send
-external setStart: (t, ~node: DomTypes.node, ~offset: int) => unit = "setStart"
+external setStart: (t, ~node: Node.t, ~offset: int) => unit = "setStart"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/setEnd)
 */
 @send
-external setEnd: (t, ~node: DomTypes.node, ~offset: int) => unit = "setEnd"
+external setEnd: (t, ~node: Node.t, ~offset: int) => unit = "setEnd"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/setStartBefore)
 */
 @send
-external setStartBefore: (t, DomTypes.node) => unit = "setStartBefore"
+external setStartBefore: (t, Node.t) => unit = "setStartBefore"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/setStartAfter)
 */
 @send
-external setStartAfter: (t, DomTypes.node) => unit = "setStartAfter"
+external setStartAfter: (t, Node.t) => unit = "setStartAfter"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/setEndBefore)
 */
 @send
-external setEndBefore: (t, DomTypes.node) => unit = "setEndBefore"
+external setEndBefore: (t, Node.t) => unit = "setEndBefore"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/setEndAfter)
 */
 @send
-external setEndAfter: (t, DomTypes.node) => unit = "setEndAfter"
+external setEndAfter: (t, Node.t) => unit = "setEndAfter"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/collapse)
@@ -60,13 +60,13 @@ external collapse: (t, ~toStart: bool=?) => unit = "collapse"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/selectNode)
 */
 @send
-external selectNode: (t, DomTypes.node) => unit = "selectNode"
+external selectNode: (t, Node.t) => unit = "selectNode"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/selectNodeContents)
 */
 @send
-external selectNodeContents: (t, DomTypes.node) => unit = "selectNodeContents"
+external selectNodeContents: (t, Node.t) => unit = "selectNodeContents"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/compareBoundaryPoints)
@@ -97,13 +97,13 @@ external cloneContents: t => DocumentFragment.t = "cloneContents"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/insertNode)
 */
 @send
-external insertNode: (t, DomTypes.node) => unit = "insertNode"
+external insertNode: (t, Node.t) => unit = "insertNode"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/surroundContents)
 */
 @send
-external surroundContents: (t, DomTypes.node) => unit = "surroundContents"
+external surroundContents: (t, Node.t) => unit = "surroundContents"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/cloneRange)
@@ -121,7 +121,7 @@ external detach: t => unit = "detach"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/isPointInRange)
 */
 @send
-external isPointInRange: (t, ~node: DomTypes.node, ~offset: int) => bool =
+external isPointInRange: (t, ~node: Node.t, ~offset: int) => bool =
   "isPointInRange"
 
 /**
@@ -129,26 +129,26 @@ Returns −1 if the point is before the range, 0 if the point is in the range, a
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/comparePoint)
 */
 @send
-external comparePoint: (t, ~node: DomTypes.node, ~offset: int) => int = "comparePoint"
+external comparePoint: (t, ~node: Node.t, ~offset: int) => int = "comparePoint"
 
 /**
 Returns whether range intersects node.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/intersectsNode)
 */
 @send
-external intersectsNode: (t, DomTypes.node) => bool = "intersectsNode"
+external intersectsNode: (t, Node.t) => bool = "intersectsNode"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/getClientRects)
 */
 @send
-external getClientRects: t => DomTypes.domRectList = "getClientRects"
+external getClientRects: t => DOM.domRectList = "getClientRects"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/getBoundingClientRect)
 */
 @send
-external getBoundingClientRect: t => DomTypes.domRect = "getBoundingClientRect"
+external getBoundingClientRect: t => DOM.domRect = "getBoundingClientRect"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment)

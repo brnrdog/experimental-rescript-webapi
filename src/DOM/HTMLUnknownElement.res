@@ -3,7 +3,7 @@ An invalid HTML element and derives from the HTMLElement interface, but without 
 [See HTMLUnknownElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLUnknownElement)
 */
 type t = {
-  ...HTMLElement.t,
+  ...HTML.htmlElement,
 }
 
 include HTMLElement.Impl({type t = t})
