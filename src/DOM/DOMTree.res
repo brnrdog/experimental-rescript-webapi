@@ -673,11 +673,11 @@ and shadowRoot = {
     Retrieves a collection of styleSheet objects representing the style sheets that correspond to each instance of a link or style object in the document.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/styleSheets)
     */
-  styleSheets: DOM.styleSheetList,
+  styleSheets: StyleSheetList.t,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/adoptedStyleSheets)
     */
-  mutable adoptedStyleSheets: array<DOM.cssStyleSheet>,
+  mutable adoptedStyleSheets: array<StyleSheet.cssStyleSheet>,
   /**
     Returns document's fullscreen element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/fullscreenElement)
@@ -959,11 +959,11 @@ and htmlElement = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/style)
     */
-  style: DOM.cssStyleDeclaration,
+  style: CSSStyleDeclaration.t,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/attributeStyleMap)
     */
-  attributeStyleMap: DOM.stylePropertyMap,
+  attributeStyleMap: StylePropertyMap.t,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/contentEditable)
     */
