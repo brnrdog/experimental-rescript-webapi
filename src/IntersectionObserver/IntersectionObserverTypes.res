@@ -55,7 +55,7 @@ type intersectionObserverEntry = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/IntersectionObserverEntry/target)
     */
-  target: DOM.element,
+  target: Element.t,
 }
 
 type intersectionObserverInit = {

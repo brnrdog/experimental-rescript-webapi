@@ -134,7 +134,7 @@ external parent: t => t = "parent"
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/frameElement)
     */
 @get
-external frameElement: t => Null.t<DOM.element> = "frameElement"
+external frameElement: t => Null.t<Element.t> = "frameElement"
 
 /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/navigator)
@@ -530,7 +530,7 @@ external scrollByXY: (t, ~x: float, ~y: float) => unit = "scrollBy"
 @send
 external getComputedStyle: (
   t,
-  ~elt: DOM.element,
+  ~elt: Element.t,
   ~pseudoElt: string=?,
 ) => DomTypes.cssStyleDeclaration = "getComputedStyle"
 

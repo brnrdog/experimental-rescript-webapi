@@ -13,27 +13,27 @@ type mutationRecord = {
     Returns the node the mutation affected, depending on the type. For "attributes", it is the element whose attribute changed. For "characterData", it is the CharacterData node. For "childList", it is the node whose children changed.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MutationRecord/target)
     */
-  target: DOM.node,
+  target: Node.t,
   /**
     Return the nodes added and removed respectively.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MutationRecord/addedNodes)
     */
-  addedNodes: DOM.nodeList<DOM.node>,
+  addedNodes: DOM.nodeList<Node.t>,
   /**
     Return the nodes added and removed respectively.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MutationRecord/removedNodes)
     */
-  removedNodes: DOM.nodeList<DOM.node>,
+  removedNodes: DOM.nodeList<Node.t>,
   /**
     Return the previous and next sibling respectively of the added or removed nodes, and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MutationRecord/previousSibling)
     */
-  previousSibling: Null.t<DOM.node>,
+  previousSibling: Null.t<Node.t>,
   /**
     Return the previous and next sibling respectively of the added or removed nodes, and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MutationRecord/nextSibling)
     */
-  nextSibling: Null.t<DOM.node>,
+  nextSibling: Null.t<Node.t>,
   /**
     Returns the local name of the changed attribute, and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MutationRecord/attributeName)

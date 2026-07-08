@@ -11,7 +11,7 @@ Returns the first element within node's descendants whose ID is elementId.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getElementById)
 */
 @send
-external getElementById: (DOM.document, string) => null<DOM.element> = "getElementById"
+external getElementById: (DOM.document, string) => null<Element.t> = "getElementById"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getAnimations)
@@ -26,7 +26,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/prepend)
 */
 @send
-external prepend: (DOM.document, DOM.node) => unit = "prepend"
+external prepend: (DOM.document, Node.t) => unit = "prepend"
 
 /**
 Inserts nodes before the first child of node, while replacing strings in nodes with equivalent Text nodes.
@@ -44,7 +44,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/append)
 */
 @send
-external append: (DOM.document, DOM.node) => unit = "append"
+external append: (DOM.document, Node.t) => unit = "append"
 
 /**
 Inserts nodes after the last child of node, while replacing strings in nodes with equivalent Text nodes.
@@ -62,7 +62,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
 */
 @send
-external replaceChildren: (DOM.document, DOM.node) => unit = "replaceChildren"
+external replaceChildren: (DOM.document, Node.t) => unit = "replaceChildren"
 
 /**
 Replace all children of node with nodes, while replacing strings in nodes with equivalent Text nodes.
@@ -78,14 +78,14 @@ Returns the first element that is a descendant of node that matches selectors.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/querySelector)
 */
 @send
-external querySelector: (DOM.document, string) => Null.t<DOM.element> = "querySelector"
+external querySelector: (DOM.document, string) => Null.t<Element.t> = "querySelector"
 
 /**
 Returns all element descendants of node that match selectors.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll)
 */
 @send
-external querySelectorAll: (DOM.document, string) => DOM.nodeList<DOM.element> = "querySelectorAll"
+external querySelectorAll: (DOM.document, string) => DOM.nodeList<Element.t> = "querySelectorAll"
 
 /**
 This method compiles an XPathExpression which can then be used for (repeated) evaluations.
@@ -109,7 +109,7 @@ external createExpression: (
 external evaluate: (
   DOM.document,
   ~expression: string,
-  ~contextNode: DOM.node,
+  ~contextNode: Node.t,
   ~resolver: Null.t<string> => Null.t<string>=?,
   ~type_: int=?,
   ~result: XPathResult.t=?,
@@ -121,7 +121,7 @@ Retrieves a collection of objects based on the specified element name.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getElementsByTagName)
 */
 @send
-external getElementsByTagName: (DOM.document, string) => HTMLCollection.t<DOM.element> =
+external getElementsByTagName: (DOM.document, string) => HTMLCollection.t<Element.t> =
   "getElementsByTagName"
 
 /**
@@ -139,14 +139,14 @@ external getElementsByTagNameNS: (
   DOM.document,
   ~namespace: string,
   ~localName: string,
-) => HTMLCollection.t<DOM.element> = "getElementsByTagNameNS"
+) => HTMLCollection.t<Element.t> = "getElementsByTagNameNS"
 
 /**
 Returns a HTMLCollection of the elements in the object on which the method was invoked (a document or an element) that have all the classes given by classNames. The classNames argument is interpreted as a space-separated list of classes.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getElementsByClassName)
 */
 @send
-external getElementsByClassName: (DOM.document, string) => HTMLCollection.t<DOM.element> =
+external getElementsByClassName: (DOM.document, string) => HTMLCollection.t<Element.t> =
   "getElementsByClassName"
 
 type elementCreationOptions = {mutable is?: string}
@@ -156,7 +156,7 @@ Creates an instance of the element for the specified tag.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/createElement)
 */
 @send
-external createElement: (DOM.document, string, ~options: elementCreationOptions=?) => DOM.element =
+external createElement: (DOM.document, string, ~options: elementCreationOptions=?) => Element.t =
   "createElement"
 
 /**
@@ -181,7 +181,7 @@ external createElementNS: (
   ~namespace: string=?,
   ~qualifiedName: string=?,
   ~options: string=?,
-) => DOM.element = "createElementNS"
+) => Element.t = "createElementNS"
 
 /**
 Returns an element with namespace namespace. Its namespace prefix will be everything before ":" (U+003E) in qualifiedName or null. Its local name will be everything after ":" (U+003E) in qualifiedName or qualifiedName.
@@ -205,7 +205,7 @@ external createElementNS2: (
   ~namespace: string,
   ~qualifiedName: string,
   ~options: elementCreationOptions=?,
-) => DOM.element = "createElementNS"
+) => Element.t = "createElementNS"
 
 /**
 Creates a new document.
@@ -227,7 +227,7 @@ Returns a CDATASection node whose data is data.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/createCDATASection)
 */
 @send
-external createCDATASection: (DOM.document, string) => DOM.cdataSection = "createCDATASection"
+external createCDATASection: (DOM.document, string) => CDATASection.t = "createCDATASection"
 
 /**
 Creates a comment object with the specified data.
@@ -235,7 +235,7 @@ Creates a comment object with the specified data.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/createComment)
 */
 @send
-external createComment: (DOM.document, string) => DOM.comment = "createComment"
+external createComment: (DOM.document, string) => Comment.t = "createComment"
 
 /**
 Returns a ProcessingInstruction node whose target is target and data is data. If target does not match the Name production an "InvalidCharacterError" DOMException will be thrown. If data contains "?>" an "InvalidCharacterError" DOMException will be thrown.
@@ -246,7 +246,7 @@ external createProcessingInstruction: (
   DOM.document,
   ~target: string,
   ~data: string,
-) => DOM.processingInstruction = "createProcessingInstruction"
+) => ProcessingInstruction.t = "createProcessingInstruction"
 
 /**
 Returns a copy of node. If deep is true, the copy also includes the node's descendants.
@@ -292,7 +292,7 @@ external createEvent: (DOM.document, string) => DOM.event = "createEvent"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/createRange)
 */
 @send
-external createRange: DOM.document => DOM.range = "createRange"
+external createRange: DOM.document => Range.t = "createRange"
 
 /**
 Creates a NodeIterator object that you can use to traverse filtered lists of nodes or elements in a document.
@@ -304,10 +304,10 @@ Creates a NodeIterator object that you can use to traverse filtered lists of nod
 @send
 external createNodeIterator: (
   DOM.document,
-  ~root: DOM.node,
+  ~root: Node.t,
   ~whatToShow: int=?,
-  ~filter: DOM.nodeFilter=?,
-) => DOM.nodeIterator = "createNodeIterator"
+  ~filter: NodeFilter.t=?,
+) => NodeIterator.t = "createNodeIterator"
 
 /**
 Creates a TreeWalker object that you can use to traverse filtered lists of nodes or elements in a document.
@@ -319,10 +319,10 @@ Creates a TreeWalker object that you can use to traverse filtered lists of nodes
 @send
 external createTreeWalker: (
   DOM.document,
-  ~root: DOM.node,
+  ~root: Node.t,
   ~whatToShow: int=?,
-  ~filter: DOM.nodeFilter=?,
-) => DOM.treeWalker = "createTreeWalker"
+  ~filter: NodeFilter.t=?,
+) => TreeWalker.t = "createTreeWalker"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/startViewTransition)

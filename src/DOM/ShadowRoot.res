@@ -52,7 +52,7 @@ type t = {
     Returns the parent.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentNode)
     */
-  parentNode: Null.t<DOM.node>,
+  parentNode: Null.t<Node.t>,
   /**
     Returns the parent element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentElement)
@@ -62,27 +62,27 @@ type t = {
     Returns the children.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
     */
-  childNodes: DOM.nodeList<DOM.node>,
+  childNodes: DOM.nodeList<Node.t>,
   /**
     Returns the first child.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/firstChild)
     */
-  firstChild: Null.t<DOM.node>,
+  firstChild: Null.t<Node.t>,
   /**
     Returns the last child.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/lastChild)
     */
-  lastChild: Null.t<DOM.node>,
+  lastChild: Null.t<Node.t>,
   /**
     Returns the previous sibling.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/previousSibling)
     */
-  previousSibling: Null.t<DOM.node>,
+  previousSibling: Null.t<Node.t>,
   /**
     Returns the next sibling.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nextSibling)
     */
-  nextSibling: Null.t<DOM.node>,
+  nextSibling: Null.t<Node.t>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nodeValue)
     */
@@ -116,7 +116,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/ShadowRoot/host)
     */
-  host: DOM.element,
+  host: Element.t,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/ShadowRoot/innerHTML)
     */
@@ -134,7 +134,7 @@ type t = {
     Returns document's fullscreen element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/fullscreenElement)
     */
-  fullscreenElement: Null.t<DOM.element>,
+  fullscreenElement: Null.t<Element.t>,
   /**
     Returns the deepest element in the document through which or to which key events are being routed. This is, roughly speaking, the focused element in the document.
 
@@ -143,15 +143,15 @@ For the purposes of this API, when a child browsing context is focused, its cont
 Similarly, when the focused element is in a different node tree than documentOrShadowRoot, the element returned will be the host that's located in the same node tree as documentOrShadowRoot if documentOrShadowRoot is a shadow-including inclusive ancestor of the focused element, and null if not.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/activeElement)
     */
-  activeElement: Null.t<DOM.element>,
+  activeElement: Null.t<Element.t>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureElement)
     */
-  pictureInPictureElement: Null.t<DOM.element>,
+  pictureInPictureElement: Null.t<Element.t>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/pointerLockElement)
     */
-  pointerLockElement: Null.t<DOM.element>,
+  pointerLockElement: Null.t<Element.t>,
 }
 
 type getHTMLOptions = {

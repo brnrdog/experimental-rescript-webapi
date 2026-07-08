@@ -277,13 +277,13 @@ external assignedNodes: (
 external assignedElements: (
   t,
   ~options: DomTypes.assignedNodesOptions=?,
-) => array<DOM.element> = "assignedElements"
+) => array<Element.t> = "assignedElements"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assign)
 */
 @send
-external assign: (t, DOM.element) => unit = "assign"
+external assign: (t, Element.t) => unit = "assign"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assign)

@@ -34,7 +34,7 @@ type t = {
     Returns the parent.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentNode)
     */
-  parentNode: Null.t<DOM.node>,
+  parentNode: Null.t<Node.t>,
   /**
     Returns the parent element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentElement)
@@ -44,27 +44,27 @@ type t = {
     Returns the children.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
     */
-  childNodes: DOM.nodeList<DOM.node>,
+  childNodes: DOM.nodeList<Node.t>,
   /**
     Returns the first child.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/firstChild)
     */
-  firstChild: Null.t<DOM.node>,
+  firstChild: Null.t<Node.t>,
   /**
     Returns the last child.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/lastChild)
     */
-  lastChild: Null.t<DOM.node>,
+  lastChild: Null.t<Node.t>,
   /**
     Returns the previous sibling.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/previousSibling)
     */
-  previousSibling: Null.t<DOM.node>,
+  previousSibling: Null.t<Node.t>,
   /**
     Returns the next sibling.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nextSibling)
     */
-  nextSibling: Null.t<DOM.node>,
+  nextSibling: Null.t<Node.t>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nodeValue)
     */
@@ -79,17 +79,17 @@ type t = {
     Returns the child elements.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/children)
     */
-  children: HTMLCollection.t<DOM.element>,
+  children: HTMLCollection.t<Element.t>,
   /**
     Returns the first child that is an element, and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/firstElementChild)
     */
-  firstElementChild: Null.t<DOM.element>,
+  firstElementChild: Null.t<Element.t>,
   /**
     Returns the last child that is an element, and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/lastElementChild)
     */
-  lastElementChild: Null.t<DOM.element>,
+  lastElementChild: Null.t<Element.t>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/childElementCount)
     */
@@ -134,7 +134,7 @@ Returns the first element within node's descendants whose ID is elementId.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DocumentFragment/getElementById)
 */
   @send
-  external getElementById: (T.t, string) => null<DOM.element> = "getElementById"
+  external getElementById: (T.t, string) => null<Element.t> = "getElementById"
 
   /**
 Inserts nodes before the first child of node, while replacing strings in nodes with equivalent Text nodes.
@@ -159,14 +159,14 @@ Returns the first element that is a descendant of node that matches selectors.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DocumentFragment/querySelector)
 */
   @send
-  external querySelector: (T.t, string) => Null.t<DOM.element> = "querySelector"
+  external querySelector: (T.t, string) => Null.t<Element.t> = "querySelector"
 
   /**
 Returns all element descendants of node that match selectors.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DocumentFragment/querySelectorAll)
 */
   @send
-  external querySelectorAll: (T.t, string) => DomTypes.nodeList<DOM.element> =
+  external querySelectorAll: (T.t, string) => DomTypes.nodeList<Element.t> =
     "querySelectorAll"
 
   /**

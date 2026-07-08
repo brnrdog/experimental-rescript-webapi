@@ -102,7 +102,7 @@ external parent: DomTypes.window = "parent"
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/frameElement)
 */
-external frameElement: DOM.element = "frameElement"
+external frameElement: Element.t = "frameElement"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/navigator)
@@ -426,7 +426,7 @@ external scrollBy2: (~x: float, ~y: float) => unit = "scrollBy"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/getComputedStyle)
 */
 external getComputedStyle: (
-  ~elt: DOM.element,
+  ~elt: Element.t,
   ~pseudoElt: string=?,
 ) => DomTypes.cssStyleDeclaration = "getComputedStyle"
 

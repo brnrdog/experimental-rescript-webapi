@@ -6,7 +6,7 @@ type t = private {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/anchorNode)
     */
-  anchorNode: Null.t<DOM.node>,
+  anchorNode: Null.t<Node.t>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/anchorOffset)
     */
@@ -14,7 +14,7 @@ type t = private {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/focusNode)
     */
-  focusNode: Null.t<DOM.node>,
+  focusNode: Null.t<Node.t>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/focusOffset)
     */
@@ -42,19 +42,19 @@ type t = private {
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/getRangeAt)
 */
 @send
-external getRangeAt: (t, int) => DomTypes.range = "getRangeAt"
+external getRangeAt: (t, int) => Range.t = "getRangeAt"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/addRange)
 */
 @send
-external addRange: (t, DomTypes.range) => unit = "addRange"
+external addRange: (t, Range.t) => unit = "addRange"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/removeRange)
 */
 @send
-external removeRange: (t, DomTypes.range) => unit = "removeRange"
+external removeRange: (t, Range.t) => unit = "removeRange"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/removeAllRanges)

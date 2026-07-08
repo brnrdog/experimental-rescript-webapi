@@ -14,7 +14,7 @@ type t = {
     Retrieves a collection of the area objects defined for the given map object.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLMapElement/areas)
     */
-  areas: HTMLCollection.t<DOM.element>,
+  areas: HTMLCollection.t<Element.t>,
 }
 
 include HTMLElement.Impl({type t = t})

@@ -34,7 +34,7 @@ type t = {
     Returns the parent.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentNode)
     */
-  parentNode: Null.t<DOM.node>,
+  parentNode: Null.t<Node.t>,
   /**
     Returns the parent element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentElement)
@@ -44,27 +44,27 @@ type t = {
     Returns the children.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
     */
-  childNodes: DOM.nodeList<DOM.node>,
+  childNodes: DOM.nodeList<Node.t>,
   /**
     Returns the first child.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/firstChild)
     */
-  firstChild: Null.t<DOM.node>,
+  firstChild: Null.t<Node.t>,
   /**
     Returns the last child.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/lastChild)
     */
-  lastChild: Null.t<DOM.node>,
+  lastChild: Null.t<Node.t>,
   /**
     Returns the previous sibling.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/previousSibling)
     */
-  previousSibling: Null.t<DOM.node>,
+  previousSibling: Null.t<Node.t>,
   /**
     Returns the next sibling.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nextSibling)
     */
-  nextSibling: Null.t<DOM.node>,
+  nextSibling: Null.t<Node.t>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nodeValue)
     */
@@ -87,12 +87,12 @@ type t = {
     Returns the first preceding sibling that is an element, and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CharacterData/previousElementSibling)
     */
-  previousElementSibling: Null.t<DOM.element>,
+  previousElementSibling: Null.t<Element.t>,
   /**
     Returns the first following sibling that is an element, and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CharacterData/nextElementSibling)
     */
-  nextElementSibling: Null.t<DOM.element>,
+  nextElementSibling: Null.t<Element.t>,
 }
 
 module Impl = (

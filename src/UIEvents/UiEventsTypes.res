@@ -543,7 +543,7 @@ type inputEventInit = {
   mutable isComposing?: bool,
   mutable inputType?: string,
   mutable dataTransfer?: Null.t<dataTransfer>,
-  mutable targetRanges?: array<DOM.staticRange>,
+  mutable targetRanges?: array<StaticRange.t>,
 }
 
 type touchInit = {

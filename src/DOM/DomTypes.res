@@ -11,25 +11,17 @@ type structuredSerializeOptions = ChannelMessagingTypes.structuredSerializeOptio
 type validityState = DOM.validityState
 type cssStyleSheet = DOM.cssStyleSheet
 type nodeList<'a> = DOM.nodeList<'a>
-type node = DOM.node
+type node = Node.t
 type cssStyleDeclaration = DOM.cssStyleDeclaration
 type domRectReadOnly = DOM.domRectReadOnly
 type styleSheet = DOM.styleSheet
 type mediaQueryList = DOM.mediaQueryList
 type domRect = DOM.domRect
-type range = DOM.range
 type cssStyleValue = DOM.cssStyleValue
-type treeWalker = DOM.treeWalker
-type abstractRange = DOM.abstractRange
 type styleSheetList = DOM.styleSheetList
-type nodeFilter = DOM.nodeFilter
 type fileList = DOM.fileList
 type cssRule = DOM.cssRule
 type domRectList = DOM.domRectList
-type nodeIterator = DOM.nodeIterator
-type cdataSection = DOM.cdataSection
-type comment = DOM.comment
-type processingInstruction = DOM.processingInstruction
 type caretPosition = DOM.caretPosition
 type idleDeadline = DOM.idleDeadline
 type cssRuleList = DOM.cssRuleList
@@ -393,7 +385,7 @@ All of the SVG WebApiDOM interfaces that correspond directly to elements in the 
 [See SVGElement on MDN](https://developer.mozilla.org/docs/Web/API/SVGElement)
 */
 type svgElement = {
-  ...DOM.element,
+  ...Element.t,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset)
     */

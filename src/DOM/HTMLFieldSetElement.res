@@ -28,7 +28,7 @@ type t = {
     Returns an HTMLCollection of the form controls in the element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/elements)
     */
-  elements: HTMLCollection.t<DOM.element>,
+  elements: HTMLCollection.t<Element.t>,
   /**
     Returns whether an element will successfully validate based on forms validation rules and constraints.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/willValidate)

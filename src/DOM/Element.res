@@ -380,7 +380,7 @@ module Impl = (
 ) => {
   include Node.Impl({type t = T.t})
 
-  external asElement: T.t => DOM.element = "%identity"
+  external asElement: T.t => Element.t = "%identity"
 
   /**
 Inserts nodes just after node, while replacing strings in nodes with equivalent Text nodes.
@@ -389,7 +389,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/after)
 */
   @send
-  external after: (T.t, DOM.node) => unit = "after"
+  external after: (T.t, Node.t) => unit = "after"
 
   /**
 Inserts nodes just after node, while replacing strings in nodes with equivalent Text nodes.
@@ -423,7 +423,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/append)
 */
   @send
-  external append: (T.t, DOM.node) => unit = "append"
+  external append: (T.t, Node.t) => unit = "append"
 
   /**
 Inserts nodes after the last child of node, while replacing strings in nodes with equivalent Text nodes.
@@ -448,7 +448,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/before)
 */
   @send
-  external before: (T.t, DOM.node) => unit = "before"
+  external before: (T.t, Node.t) => unit = "before"
 
   /**
 Inserts nodes just before node, while replacing strings in nodes with equivalent Text nodes.
@@ -538,14 +538,14 @@ Returns a HTMLCollection of the elements in the object on which the method was i
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getElementsByClassName)
 */
   @send
-  external getElementsByClassName: (T.t, string) => HTMLCollection.t<DOM.element> =
+  external getElementsByClassName: (T.t, string) => HTMLCollection.t<Element.t> =
     "getElementsByClassName"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagName)
 */
   @send
-  external getElementsByTagName: (T.t, string) => HTMLCollection.t<DOM.element> =
+  external getElementsByTagName: (T.t, string) => HTMLCollection.t<Element.t> =
     "getElementsByTagName"
 
   /**
@@ -553,10 +553,10 @@ Returns a HTMLCollection of the elements in the object on which the method was i
 */
   @send
   external getElementsByTagNameNS: (
-    DOM.element,
+    Element.t,
     ~namespace: string,
     ~localName: string,
-  ) => HTMLCollection.t<DOM.element> = "getElementsByTagNameNS"
+  ) => HTMLCollection.t<Element.t> = "getElementsByTagNameNS"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getHTML)
@@ -598,8 +598,8 @@ Returns true if element has attributes, and false otherwise.
   external insertAdjacentElement: (
     T.t,
     ~where: DOM.insertPosition,
-    ~element: DOM.element,
-  ) => DOM.element = "insertAdjacentElement"
+    ~element: Element.t,
+  ) => Element.t = "insertAdjacentElement"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentHTML)
@@ -629,7 +629,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/prepend)
 */
   @send
-  external prepend: (T.t, DOM.node) => unit = "prepend"
+  external prepend: (T.t, Node.t) => unit = "prepend"
 
   /**
 Inserts nodes before the first child of node, while replacing strings in nodes with equivalent Text nodes.
@@ -645,14 +645,14 @@ Returns the first element that is a descendant of node that matches selectors.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/querySelector)
 */
   @send
-  external querySelector: (T.t, string) => Null.t<DOM.element> = "querySelector"
+  external querySelector: (T.t, string) => Null.t<Element.t> = "querySelector"
 
   /**
 Returns all element descendants of node that match selectors.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll)
 */
   @send
-  external querySelectorAll: (T.t, string) => DOM.nodeList<DOM.element> =
+  external querySelectorAll: (T.t, string) => DOM.nodeList<Element.t> =
     "querySelectorAll"
 
   /**
@@ -696,7 +696,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
 */
   @send
-  external replaceChildren: (T.t, DOM.node) => unit = "replaceChildren"
+  external replaceChildren: (T.t, Node.t) => unit = "replaceChildren"
 
   /**
 Replace all children of node with nodes, while replacing strings in nodes with equivalent Text nodes.
@@ -714,7 +714,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CharacterData/replaceWith)
 */
   @send
-  external replaceWith: (T.t, DOM.node) => unit = "replaceWith"
+  external replaceWith: (T.t, Node.t) => unit = "replaceWith"
 
   /**
 Replaces node with nodes, while replacing strings in nodes with equivalent Text nodes.
@@ -846,7 +846,7 @@ Sets the value of element's attribute whose namespace is namespace and local nam
 */
   @send
   external setAttributeNS: (
-    DOM.element,
+    Element.t,
     ~namespace: string,
     ~qualifiedName: string,
     ~value: string,
@@ -875,6 +875,6 @@ Returns true if qualifiedName is now present, and false otherwise.
     "toggleAttribute"
 }
 
-include Impl({type t = DOM.element})
+include Impl({type t = Element.t})
 
 let isInstanceOf = (_: 't): bool => %raw(`param instanceof Element`)
