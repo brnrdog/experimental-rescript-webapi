@@ -15,7 +15,7 @@ Can be set, to change the selection.
 }
 
 /**
-Inserts element before the Node.t given by before.
+Inserts element before the DOMTree.node given by before.
 
 The before argument can be a number, in which case element is inserted before the item with that number, or an element from the collection, in which case element is inserted before that element.
 

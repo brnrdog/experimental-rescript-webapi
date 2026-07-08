@@ -4,7 +4,7 @@ Provides special properties and methods (beyond those of the regular object HTML
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Sets or retrieves the name of the object.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLMapElement/name)
@@ -14,7 +14,7 @@ type t = {
     Retrieves a collection of the area objects defined for the given map object.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLMapElement/areas)
     */
-  areas: HTMLCollection.t<Element.t>,
+  areas: HTMLCollection.t<DOMTree.element>,
 }
 
 include HTMLElement.Impl({type t = t})

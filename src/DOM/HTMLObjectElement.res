@@ -4,7 +4,7 @@ Provides special properties and methods (beyond those on the HTMLElement interfa
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Sets or retrieves the WebApiURL that references the data of the object.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/data)
@@ -44,7 +44,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/contentWindow)
     */
-  contentWindow: Null.t<window>,
+  contentWindow: Null.t<DOM.window>,
   /**
     Returns whether an element will successfully validate based on forms validation rules and constraints.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/willValidate)
@@ -54,7 +54,7 @@ type t = {
     Returns a  ValidityState object that represents the validity states of an element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/validity)
     */
-  validity: validityState,
+  validity: DOM.validityState,
   /**
     Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/validationMessage)

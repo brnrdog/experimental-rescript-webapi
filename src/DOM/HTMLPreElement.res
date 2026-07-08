@@ -3,7 +3,7 @@ Exposes specific properties and methods (beyond those of the HTMLElement interfa
 [See HTMLPreElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLPreElement)
 */
 type t = private {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
 }
 
 include HTMLElement.Impl({type t = t})

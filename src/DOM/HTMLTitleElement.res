@@ -4,7 +4,7 @@ Contains the title for a document. This element inherits all of the properties a
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Retrieves or sets the text of the object as a string.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTitleElement/text)

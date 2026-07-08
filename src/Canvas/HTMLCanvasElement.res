@@ -4,7 +4,7 @@ Provides properties and methods for manipulating the layout and presentation of 
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Gets or sets the width of a canvas element on a document.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/width)

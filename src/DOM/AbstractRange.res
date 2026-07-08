@@ -6,7 +6,7 @@ type t = {
     Returns range's start node.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/AbstractRange/startContainer)
     */
-  startContainer: Node.t,
+  startContainer: DOMTree.node,
   /**
     Returns range's start offset.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/AbstractRange/startOffset)
@@ -16,7 +16,7 @@ type t = {
     Returns range's end node.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/AbstractRange/endContainer)
     */
-  endContainer: Node.t,
+  endContainer: DOMTree.node,
   /**
     Returns range's end offset.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/AbstractRange/endOffset)

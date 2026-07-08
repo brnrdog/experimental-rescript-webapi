@@ -142,7 +142,7 @@ external createPattern: (
 @send
 external createPattern2: (
   DOM.canvasRenderingContext2D,
-  ~image: DOM.svgImageElement,
+  ~image: SVGElement.svgImageElement,
   ~repetition: string,
 ) => CanvasTypes.canvasPattern = "createPattern"
 
@@ -333,7 +333,7 @@ external isPointInStroke2: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawFocusIfNeeded)
 */
 @send
-external drawFocusIfNeeded: (DOM.canvasRenderingContext2D, Element.t) => unit =
+external drawFocusIfNeeded: (DOM.canvasRenderingContext2D, DOMTree.element) => unit =
   "drawFocusIfNeeded"
 
 /**
@@ -343,7 +343,7 @@ external drawFocusIfNeeded: (DOM.canvasRenderingContext2D, Element.t) => unit =
 external drawFocusIfNeeded2: (
   DOM.canvasRenderingContext2D,
   ~path: CanvasTypes.path2D,
-  ~element: Element.t,
+  ~element: DOMTree.element,
 ) => unit = "drawFocusIfNeeded"
 
 /**
@@ -394,7 +394,7 @@ external drawImage: (
 @send
 external drawImageWithSvg: (
   DOM.canvasRenderingContext2D,
-  ~image: DOM.svgImageElement,
+  ~image: SVGElement.svgImageElement,
   ~dx: float,
   ~dy: float,
 ) => unit = "drawImage"
@@ -473,7 +473,7 @@ external drawImageWithDimensions: (
 @send
 external drawImageWithSvgDimensions: (
   DOM.canvasRenderingContext2D,
-  ~image: DOM.svgImageElement,
+  ~image: SVGElement.svgImageElement,
   ~dx: float,
   ~dy: float,
   ~dw: float,
@@ -568,7 +568,7 @@ external drawImageWithSubRectangle: (
 @send
 external drawImageWithSvgSubRectangle: (
   DOM.canvasRenderingContext2D,
-  ~image: DOM.svgImageElement,
+  ~image: SVGElement.svgImageElement,
   ~sx: float,
   ~sy: float,
   ~sw: float,

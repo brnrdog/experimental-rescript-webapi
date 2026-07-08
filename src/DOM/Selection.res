@@ -6,7 +6,7 @@ type t = private {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/anchorNode)
     */
-  anchorNode: Null.t<Node.t>,
+  anchorNode: Null.t<DOMTree.node>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/anchorOffset)
     */
@@ -14,7 +14,7 @@ type t = private {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/focusNode)
     */
-  focusNode: Null.t<Node.t>,
+  focusNode: Null.t<DOMTree.node>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/focusOffset)
     */
@@ -72,13 +72,13 @@ external empty: t => unit = "empty"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/collapse)
 */
 @send
-external collapse: (t, ~node: Node.t, ~offset: int=?) => unit = "collapse"
+external collapse: (t, ~node: DOMTree.node, ~offset: int=?) => unit = "collapse"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/collapse)
 */
 @send
-external setPosition: (t, ~node: Node.t, ~offset: int=?) => unit =
+external setPosition: (t, ~node: DOMTree.node, ~offset: int=?) => unit =
   "setPosition"
 
 /**
@@ -97,7 +97,7 @@ external collapseToEnd: t => unit = "collapseToEnd"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/extend)
 */
 @send
-external extend: (t, ~node: Node.t, ~offset: int=?) => unit = "extend"
+external extend: (t, ~node: DOMTree.node, ~offset: int=?) => unit = "extend"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/setBaseAndExtent)
@@ -105,9 +105,9 @@ external extend: (t, ~node: Node.t, ~offset: int=?) => unit = "extend"
 @send
 external setBaseAndExtent: (
   t,
-  ~anchorNode: Node.t,
+  ~anchorNode: DOMTree.node,
   ~anchorOffset: int,
-  ~focusNode: Node.t,
+  ~focusNode: DOMTree.node,
   ~focusOffset: int,
 ) => unit = "setBaseAndExtent"
 
@@ -115,7 +115,7 @@ external setBaseAndExtent: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/selectAllChildren)
 */
 @send
-external selectAllChildren: (t, Node.t) => unit = "selectAllChildren"
+external selectAllChildren: (t, DOMTree.node) => unit = "selectAllChildren"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/modify)
@@ -140,6 +140,6 @@ external deleteFromDocument: t => unit = "deleteFromDocument"
 @send
 external containsNode: (
   t,
-  ~node: Node.t,
+  ~node: DOMTree.node,
   ~allowPartialContainment: bool=?,
 ) => bool = "containsNode"

@@ -4,7 +4,7 @@ Reference information for external resources and the relationship of those resou
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Sets or retrieves a destination WebApiURL or an anchor point.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/href)
@@ -27,7 +27,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/relList)
     */
-  relList: domTokenList,
+  relList: DOM.domTokenList,
   /**
     Sets or retrieves the media type.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/media)
@@ -63,8 +63,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sheet)
     */
-  sheet: Null.t<cssStyleSheet>,
+  sheet: Null.t<DOM.cssStyleSheet>,
 }
 
 include HTMLElement.Impl({type t = t})
-

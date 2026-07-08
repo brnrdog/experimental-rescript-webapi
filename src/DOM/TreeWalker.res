@@ -7,7 +7,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/TreeWalker/root)
     */
-  root: Node.t,
+  root: DOMTree.node,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/TreeWalker/whatToShow)
     */
@@ -19,47 +19,47 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/TreeWalker/currentNode)
     */
-  mutable currentNode: Node.t,
+  mutable currentNode: DOMTree.node,
 }
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/TreeWalker/parentNode)
 */
 @send
-external parentNode: t => Node.t = "parentNode"
+external parentNode: t => DOMTree.node = "parentNode"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/TreeWalker/firstChild)
 */
 @send
-external firstChild: t => Node.t = "firstChild"
+external firstChild: t => DOMTree.node = "firstChild"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/TreeWalker/lastChild)
 */
 @send
-external lastChild: t => Node.t = "lastChild"
+external lastChild: t => DOMTree.node = "lastChild"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/TreeWalker/previousSibling)
 */
 @send
-external previousSibling: t => Node.t = "previousSibling"
+external previousSibling: t => DOMTree.node = "previousSibling"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/TreeWalker/nextSibling)
 */
 @send
-external nextSibling: t => Node.t = "nextSibling"
+external nextSibling: t => DOMTree.node = "nextSibling"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/TreeWalker/previousNode)
 */
 @send
-external previousNode: t => Node.t = "previousNode"
+external previousNode: t => DOMTree.node = "previousNode"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/TreeWalker/nextNode)
 */
 @send
-external nextNode: t => Node.t = "nextNode"
+external nextNode: t => DOMTree.node = "nextNode"

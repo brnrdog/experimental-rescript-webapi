@@ -4,7 +4,7 @@ Provides special properties and methods (beyond the regular HTMLElement interfac
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Sets or gets the current value of a progress element. The value must be a non-negative number between 0 and the max value.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/value)
@@ -23,7 +23,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/labels)
     */
-  labels: nodeList<HTMLLabelElement.t>,
+  labels: DOM.nodeList<HTMLLabelElement.t>,
 }
 
 include HTMLElement.Impl({type t = t})

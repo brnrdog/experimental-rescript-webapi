@@ -3,7 +3,7 @@ Provides special properties (beyond those defined on the regular HTMLElement int
 [See HTMLUListElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLUListElement)
 */
 type t = private {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
 }
 
 include HTMLElement.Impl({type t = t})

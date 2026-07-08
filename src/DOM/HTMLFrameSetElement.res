@@ -3,7 +3,7 @@ Provides special properties (beyond those of the regular HTMLElement interface t
 [See HTMLFrameSetElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLFrameSetElement)
 */
 type t = private {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
 }
 
 include HTMLElement.Impl({type t = t})

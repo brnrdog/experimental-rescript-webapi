@@ -10,7 +10,7 @@ external createImageBitmap: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/createImageBitmap)
 */
 external createImageBitmap2: (
-  ~image: DOM.svgImageElement,
+  ~image: SVGElement.svgImageElement,
   ~options: DOM.imageBitmapOptions=?,
 ) => promise<CanvasTypes.imageBitmap> = "createImageBitmap"
 
@@ -86,7 +86,7 @@ external createImageBitmap10: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/createImageBitmap)
 */
 external createImageBitmap11: (
-  ~image: DOM.svgImageElement,
+  ~image: SVGElement.svgImageElement,
   ~sx: int,
   ~sy: int,
   ~sw: int,

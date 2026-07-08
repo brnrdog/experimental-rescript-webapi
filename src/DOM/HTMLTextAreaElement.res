@@ -4,7 +4,7 @@ Provides special properties and methods for manipulating the layout and presenta
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/autocomplete)
     */
@@ -91,7 +91,7 @@ type t = {
     Returns a  ValidityState object that represents the validity states of an element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/validity)
     */
-  validity: validityState,
+  validity: DOM.validityState,
   /**
     Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/validationMessage)
@@ -100,7 +100,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/labels)
     */
-  labels: nodeList<HTMLLabelElement.t>,
+  labels: DOM.nodeList<HTMLLabelElement.t>,
   /**
     Gets or sets the starting position or offset of a text selection.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionStart)

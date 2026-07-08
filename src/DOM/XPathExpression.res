@@ -11,7 +11,7 @@ type t = private {}
 @send
 external evaluate: (
   t,
-  ~contextNode: Node.t,
+  ~contextNode: DOMTree.node,
   ~type_: int=?,
   ~result: XPathResult.t=?,
 ) => XPathResult.t = "evaluate"

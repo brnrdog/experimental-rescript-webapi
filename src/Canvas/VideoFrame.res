@@ -28,7 +28,7 @@ let frame = VideoFrame.fromSVGImageElement(~image=mySvgImageElement)
 */
 @new
 external fromSVGImageElement: (
-  ~image: DOM.svgImageElement,
+  ~image: SVGElement.svgImageElement,
   ~init: DOM.videoFrameInit=?,
 ) => DOM.videoFrame = "VideoFrame"
 

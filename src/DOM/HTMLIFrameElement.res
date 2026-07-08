@@ -4,7 +4,7 @@ Provides special properties and methods (beyond those of the HTMLElement interfa
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Sets or retrieves a WebApiURL to be loaded by the object.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/src)
@@ -23,7 +23,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/sandbox)
     */
-  sandbox: domTokenList,
+  sandbox: DOM.domTokenList,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/allow)
     */
@@ -45,7 +45,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/referrerPolicy)
     */
-  mutable referrerPolicy: referrerPolicy,
+  mutable referrerPolicy: DOM.referrerPolicy,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/loading)
     */
@@ -59,7 +59,7 @@ type t = {
     Retrieves the object of the specified.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/contentWindow)
     */
-  contentWindow: Null.t<window>,
+  contentWindow: Null.t<DOM.window>,
 }
 
 include HTMLElement.Impl({type t = t})

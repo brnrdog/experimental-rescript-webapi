@@ -11,7 +11,7 @@ Returns the first element within node's descendants whose ID is elementId.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getElementById)
 */
 @send
-external getElementById: (DOM.document, string) => null<Element.t> = "getElementById"
+external getElementById: (DOM.document, string) => null<DOMTree.element> = "getElementById"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getAnimations)
@@ -26,7 +26,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/prepend)
 */
 @send
-external prepend: (DOM.document, Node.t) => unit = "prepend"
+external prepend: (DOM.document, DOMTree.node) => unit = "prepend"
 
 /**
 Inserts nodes before the first child of node, while replacing strings in nodes with equivalent Text nodes.
@@ -44,7 +44,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/append)
 */
 @send
-external append: (DOM.document, Node.t) => unit = "append"
+external append: (DOM.document, DOMTree.node) => unit = "append"
 
 /**
 Inserts nodes after the last child of node, while replacing strings in nodes with equivalent Text nodes.
@@ -62,7 +62,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
 */
 @send
-external replaceChildren: (DOM.document, Node.t) => unit = "replaceChildren"
+external replaceChildren: (DOM.document, DOMTree.node) => unit = "replaceChildren"
 
 /**
 Replace all children of node with nodes, while replacing strings in nodes with equivalent Text nodes.
@@ -78,14 +78,14 @@ Returns the first element that is a descendant of node that matches selectors.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/querySelector)
 */
 @send
-external querySelector: (DOM.document, string) => Null.t<Element.t> = "querySelector"
+external querySelector: (DOM.document, string) => Null.t<DOMTree.element> = "querySelector"
 
 /**
 Returns all element descendants of node that match selectors.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll)
 */
 @send
-external querySelectorAll: (DOM.document, string) => DOM.nodeList<Element.t> = "querySelectorAll"
+external querySelectorAll: (DOM.document, string) => DOM.nodeList<DOMTree.element> = "querySelectorAll"
 
 /**
 This method compiles an XPathExpression which can then be used for (repeated) evaluations.
@@ -109,7 +109,7 @@ external createExpression: (
 external evaluate: (
   DOM.document,
   ~expression: string,
-  ~contextNode: Node.t,
+  ~contextNode: DOMTree.node,
   ~resolver: Null.t<string> => Null.t<string>=?,
   ~type_: int=?,
   ~result: XPathResult.t=?,
@@ -121,7 +121,7 @@ Retrieves a collection of objects based on the specified element name.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getElementsByTagName)
 */
 @send
-external getElementsByTagName: (DOM.document, string) => HTMLCollection.t<Element.t> =
+external getElementsByTagName: (DOM.document, string) => HTMLCollection.t<DOMTree.element> =
   "getElementsByTagName"
 
 /**
@@ -139,14 +139,14 @@ external getElementsByTagNameNS: (
   DOM.document,
   ~namespace: string,
   ~localName: string,
-) => HTMLCollection.t<Element.t> = "getElementsByTagNameNS"
+) => HTMLCollection.t<DOMTree.element> = "getElementsByTagNameNS"
 
 /**
 Returns a HTMLCollection of the elements in the object on which the method was invoked (a document or an element) that have all the classes given by classNames. The classNames argument is interpreted as a space-separated list of classes.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getElementsByClassName)
 */
 @send
-external getElementsByClassName: (DOM.document, string) => HTMLCollection.t<Element.t> =
+external getElementsByClassName: (DOM.document, string) => HTMLCollection.t<DOMTree.element> =
   "getElementsByClassName"
 
 type elementCreationOptions = {mutable is?: string}
@@ -156,7 +156,7 @@ Creates an instance of the element for the specified tag.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/createElement)
 */
 @send
-external createElement: (DOM.document, string, ~options: elementCreationOptions=?) => Element.t =
+external createElement: (DOM.document, string, ~options: elementCreationOptions=?) => DOMTree.element =
   "createElement"
 
 /**
@@ -181,7 +181,7 @@ external createElementNS: (
   ~namespace: string=?,
   ~qualifiedName: string=?,
   ~options: string=?,
-) => Element.t = "createElementNS"
+) => DOMTree.element = "createElementNS"
 
 /**
 Returns an element with namespace namespace. Its namespace prefix will be everything before ":" (U+003E) in qualifiedName or null. Its local name will be everything after ":" (U+003E) in qualifiedName or qualifiedName.
@@ -205,14 +205,14 @@ external createElementNS2: (
   ~namespace: string,
   ~qualifiedName: string,
   ~options: elementCreationOptions=?,
-) => Element.t = "createElementNS"
+) => DOMTree.element = "createElementNS"
 
 /**
 Creates a new document.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/createDocumentFragment)
 */
 @send
-external createDocumentFragment: DOM.document => DocumentFragment.t = "createDocumentFragment"
+external createDocumentFragment: DOM.document => DOMTree.documentFragment = "createDocumentFragment"
 
 /**
 Creates a text string from the specified value.
@@ -304,7 +304,7 @@ Creates a NodeIterator object that you can use to traverse filtered lists of nod
 @send
 external createNodeIterator: (
   DOM.document,
-  ~root: Node.t,
+  ~root: DOMTree.node,
   ~whatToShow: int=?,
   ~filter: NodeFilter.t=?,
 ) => NodeIterator.t = "createNodeIterator"
@@ -319,7 +319,7 @@ Creates a TreeWalker object that you can use to traverse filtered lists of nodes
 @send
 external createTreeWalker: (
   DOM.document,
-  ~root: Node.t,
+  ~root: DOMTree.node,
   ~whatToShow: int=?,
   ~filter: NodeFilter.t=?,
 ) => TreeWalker.t = "createTreeWalker"
@@ -333,7 +333,7 @@ external startViewTransition: (
   ~callbackOptions: ViewTransitionsTypes.viewTransitionUpdateCallback=?,
 ) => ViewTransitionsTypes.viewTransition = "startViewTransition"
 
-type caretPositionFromPointOptions = {mutable shadowRoots?: array<DOM.shadowRoot>}
+type caretPositionFromPointOptions = {mutable shadowRoots?: array<DOMTree.shadowRoot>}
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/caretPositionFromPoint)
@@ -365,7 +365,7 @@ Gets a collection of objects based on the value of the NAME or ID attribute.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getElementsByName)
 */
 @send
-external getElementsByName: (DOM.document, string) => DOM.nodeList<HTML.htmlElement> =
+external getElementsByName: (DOM.document, string) => DOM.nodeList<DOMTree.htmlElement> =
   "getElementsByName"
 
 /**

@@ -3,7 +3,7 @@ Provides special properties (beyond the regular methods and properties available
 [See HTMLModElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLModElement)
 */
 type t = private {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
 }
 
 include HTMLElement.Impl({type t = t})

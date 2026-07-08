@@ -4,7 +4,7 @@ A <select> HTML Element. These elements also share all of the properties and met
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/disabled)
     */
@@ -73,7 +73,7 @@ type t = {
     Returns a  ValidityState object that represents the validity states of an element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/validity)
     */
-  validity: validityState,
+  validity: DOM.validityState,
   /**
     Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/validationMessage)
@@ -82,7 +82,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/labels)
     */
-  labels: nodeList<HTMLLabelElement.t>,
+  labels: DOM.nodeList<HTMLLabelElement.t>,
 }
 
 include HTMLElement.Impl({type t = t})

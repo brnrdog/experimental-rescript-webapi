@@ -1,4 +1,4 @@
-external toHTMLCanvasElement: null<Element.t> => HTMLCanvasElement.t = "%identity"
+external toHTMLCanvasElement: null<DOMTree.element> => HTMLCanvasElement.t = "%identity"
 @set
 external setFillStyle: (DOM.canvasRenderingContext2D, CanvasTypes.fillStyle) => unit =
   "fillStyle"

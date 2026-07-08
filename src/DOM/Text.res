@@ -12,7 +12,7 @@ type t = private {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/assignedSlot)
     */
-  assignedSlot: Null.t<HTMLSlotElement.t>,
+  assignedSlot: Null.t<DOMTree.htmlSlotElement>,
 }
 
 include CharacterData.Impl({type t = t})

@@ -34,37 +34,37 @@ type t = {
     Returns the parent.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentNode)
     */
-  parentNode: Null.t<Node.t>,
+  parentNode: Null.t<DOMTree.node>,
   /**
     Returns the parent element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentElement)
     */
-  parentElement: Null.t<HTML.htmlElement>,
+  parentElement: Null.t<DOMTree.htmlElement>,
   /**
     Returns the children.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
     */
-  childNodes: DOM.nodeList<Node.t>,
+  childNodes: DOM.nodeList<DOMTree.node>,
   /**
     Returns the first child.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/firstChild)
     */
-  firstChild: Null.t<Node.t>,
+  firstChild: Null.t<DOMTree.node>,
   /**
     Returns the last child.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/lastChild)
     */
-  lastChild: Null.t<Node.t>,
+  lastChild: Null.t<DOMTree.node>,
   /**
     Returns the previous sibling.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/previousSibling)
     */
-  previousSibling: Null.t<Node.t>,
+  previousSibling: Null.t<DOMTree.node>,
   /**
     Returns the next sibling.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nextSibling)
     */
-  nextSibling: Null.t<Node.t>,
+  nextSibling: Null.t<DOMTree.node>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nodeValue)
     */
@@ -87,12 +87,12 @@ type t = {
     Returns the first preceding sibling that is an element, and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CharacterData/previousElementSibling)
     */
-  previousElementSibling: Null.t<Element.t>,
+  previousElementSibling: Null.t<DOMTree.element>,
   /**
     Returns the first following sibling that is an element, and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CharacterData/nextElementSibling)
     */
-  nextElementSibling: Null.t<Element.t>,
+  nextElementSibling: Null.t<DOMTree.element>,
 }
 
 module Impl = (
@@ -111,7 +111,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CharacterData/after)
 */
   @send
-  external after: (T.t, Node.t) => unit = "after"
+  external after: (T.t, DOMTree.node) => unit = "after"
 
   /**
 Inserts nodes just after node, while replacing strings in nodes with equivalent Text nodes.
@@ -135,7 +135,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CharacterData/before)
 */
   @send
-  external before: (T.t, Node.t) => unit = "before"
+  external before: (T.t, DOMTree.node) => unit = "before"
 
   /**
 Inserts nodes just before node, while replacing strings in nodes with equivalent Text nodes.
@@ -178,7 +178,7 @@ Throws a "HierarchyRequestError" DOMException if the constraints of the node tre
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CharacterData/replaceWith)
 */
   @send
-  external replaceWith: (T.t, Node.t) => unit = "replaceWith"
+  external replaceWith: (T.t, DOMTree.node) => unit = "replaceWith"
 
   /**
 Replaces node with nodes, while replacing strings in nodes with equivalent Text nodes.

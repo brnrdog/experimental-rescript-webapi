@@ -4,7 +4,7 @@ A <style> element. It inherits properties and methods from its parent, HTMLEleme
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Enables or disables the style sheet.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/disabled)
@@ -18,8 +18,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sheet)
     */
-  sheet: Null.t<cssStyleSheet>,
+  sheet: Null.t<DOM.cssStyleSheet>,
 }
 
 include HTMLElement.Impl({type t = t})
-

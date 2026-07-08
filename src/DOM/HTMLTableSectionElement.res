@@ -3,7 +3,7 @@ Provides special properties and methods (beyond the HTMLElement interface it als
 [See HTMLTableSectionElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement)
 */
 type t = private {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Sets or retrieves the number of horizontal rows contained in the object.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/rows)

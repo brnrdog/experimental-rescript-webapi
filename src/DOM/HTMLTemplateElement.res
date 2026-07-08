@@ -4,12 +4,12 @@ Enables access to the contents of an HTML <template> element.
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Returns the template contents (a DocumentFragment).
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content)
     */
-  content: DocumentFragment.t,
+  content: DOMTree.documentFragment,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootMode)
     */

@@ -4,7 +4,7 @@ Contains descriptive metadata about a document. It inherits all of the properti
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Sets or retrieves the value specified in the content attribute of the meta object.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/name)

@@ -1,9 +1,9 @@
 @send
 external newValueSpecifiedUnits: (
-  DOM.svgLength,
+  SVGElement.svgLength,
   ~unitType: int,
   ~valueInSpecifiedUnits: float,
 ) => unit = "newValueSpecifiedUnits"
 
 @send
-external convertToSpecifiedUnits: (DOM.svgLength, int) => unit = "convertToSpecifiedUnits"
+external convertToSpecifiedUnits: (SVGElement.svgLength, int) => unit = "convertToSpecifiedUnits"

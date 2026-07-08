@@ -4,7 +4,7 @@ Provides special properties and methods for manipulating the options, layout, an
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Sets or retrieves a comma-separated list of content types.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/accept)
@@ -43,7 +43,7 @@ type t = {
     Returns a FileList object on a file type input object.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/files)
     */
-  mutable files: Null.t<fileList>,
+  mutable files: Null.t<DOM.fileList>,
   /**
     Overrides the action attribute (where the data on a form is sent) on the parent form element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/formAction)
@@ -176,7 +176,7 @@ type t = {
     Returns a  ValidityState object that represents the validity states of an element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validity)
     */
-  validity: validityState,
+  validity: DOM.validityState,
   /**
     Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validationMessage)
@@ -185,7 +185,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/labels)
     */
-  labels: Null.t<nodeList<HTMLLabelElement.t>>,
+  labels: Null.t<DOM.nodeList<HTMLLabelElement.t>>,
   /**
     Gets or sets the starting position or offset of a text selection.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionStart)
@@ -215,7 +215,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetElement)
     */
-  mutable popoverTargetElement: Null.t<element>,
+  mutable popoverTargetElement: Null.t<DOMTree.element>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetAction)
     */

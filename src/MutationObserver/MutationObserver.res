@@ -13,27 +13,27 @@ type mutationRecord = {
     Returns the node the mutation affected, depending on the type. For "attributes", it is the element whose attribute changed. For "characterData", it is the CharacterData node. For "childList", it is the node whose children changed.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MutationRecord/target)
     */
-  target: Node.t,
+  target: DOMTree.node,
   /**
     Return the nodes added and removed respectively.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MutationRecord/addedNodes)
     */
-  addedNodes: DOM.nodeList<Node.t>,
+  addedNodes: DOM.nodeList<DOMTree.node>,
   /**
     Return the nodes added and removed respectively.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MutationRecord/removedNodes)
     */
-  removedNodes: DOM.nodeList<Node.t>,
+  removedNodes: DOM.nodeList<DOMTree.node>,
   /**
     Return the previous and next sibling respectively of the added or removed nodes, and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MutationRecord/previousSibling)
     */
-  previousSibling: Null.t<Node.t>,
+  previousSibling: Null.t<DOMTree.node>,
   /**
     Return the previous and next sibling respectively of the added or removed nodes, and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MutationRecord/nextSibling)
     */
-  nextSibling: Null.t<Node.t>,
+  nextSibling: Null.t<DOMTree.node>,
   /**
     Returns the local name of the changed attribute, and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/MutationRecord/attributeName)
@@ -81,7 +81,7 @@ external make: mutationObserverCallback => t = "MutationObserver"
 @send
 external observe: (
   t,
-  ~target: Node.t,
+  ~target: DOMTree.node,
   ~options: mutationObserverInit=?,
 ) => unit = "observe"
 

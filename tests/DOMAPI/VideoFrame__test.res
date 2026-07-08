@@ -1,5 +1,5 @@
 let htmlImageElement: HTMLImageElement.t = Obj.magic()
-let svgImageElement: DOM.svgImageElement = Obj.magic()
+let svgImageElement: SVGElement.svgImageElement = Obj.magic()
 let htmlVideoElement: HTMLVideoElement.t = Obj.magic()
 let htmlCanvasElement: HTMLCanvasElement.t = Obj.magic()
 let imageBitmap: CanvasTypes.imageBitmap = Obj.magic()

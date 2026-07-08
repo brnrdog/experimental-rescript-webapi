@@ -5,7 +5,7 @@
 external define: (
   DOM.customElementRegistry,
   ~name: string,
-  ~constructor: HTML.htmlElement,
+  ~constructor: DOMTree.htmlElement,
   ~options: DOM.elementDefinitionOptions=?,
 ) => unit = "define"
 
@@ -29,4 +29,4 @@ external whenDefined: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/upgrade)
 */
 @send
-external upgrade: (DOM.customElementRegistry, Node.t) => unit = "upgrade"
+external upgrade: (DOM.customElementRegistry, DOMTree.node) => unit = "upgrade"

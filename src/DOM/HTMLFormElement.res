@@ -65,7 +65,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetParent)
     */
-  offsetParent: Null.t<element>,
+  offsetParent: Null.t<DOMTree.element>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetTop)
     */
@@ -119,7 +119,7 @@ type t = {
     Allows for manipulation of element's class content attribute as a set of whitespace-separated tokens through a DOMTokenList object.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/classList)
     */
-  classList: domTokenList,
+  classList: DOM.domTokenList,
   /**
     Returns the value of element's slot content attribute. Can be set to change it.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/slot)
@@ -128,16 +128,16 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/attributes)
     */
-  attributes: NamedNodeMap.t,
+  attributes: DOM.namedNodeMap,
   /**
     Returns element's shadow root, if any, and if shadow root's mode is "open", and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/shadowRoot)
     */
-  shadowRoot: Null.t<shadowRoot>,
+  shadowRoot: Null.t<DOMTree.shadowRoot>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/part)
     */
-  part: domTokenList,
+  part: DOM.domTokenList,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/scrollTop)
     */
@@ -209,42 +209,42 @@ type t = {
     Returns the node document. Returns null for documents.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/ownerDocument)
     */
-  ownerDocument: Null.t<document>,
+  ownerDocument: Null.t<DOM.document>,
   /**
     Returns the parent.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentNode)
     */
-  parentNode: Null.t<node>,
+  parentNode: Null.t<DOMTree.node>,
   /**
     Returns the parent element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentElement)
     */
-  parentElement: Null.t<htmlElement>,
+  parentElement: Null.t<DOMTree.htmlElement>,
   /**
     Returns the children.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
     */
-  childNodes: nodeList<node>,
+  childNodes: DOM.nodeList<DOMTree.node>,
   /**
     Returns the first child.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/firstChild)
     */
-  firstChild: Null.t<node>,
+  firstChild: Null.t<DOMTree.node>,
   /**
     Returns the last child.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/lastChild)
     */
-  lastChild: Null.t<node>,
+  lastChild: Null.t<DOMTree.node>,
   /**
     Returns the previous sibling.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/previousSibling)
     */
-  previousSibling: Null.t<node>,
+  previousSibling: Null.t<DOMTree.node>,
   /**
     Returns the next sibling.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nextSibling)
     */
-  nextSibling: Null.t<node>,
+  nextSibling: Null.t<DOMTree.node>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nodeValue)
     */
@@ -269,7 +269,7 @@ type t = {
     Specifies whether autocomplete is applied to an editable text field.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/autocomplete)
     */
-  mutable autocomplete: autoFillBase,
+  mutable autocomplete: DOM.autoFillBase,
   /**
     Sets or retrieves the encoding type for the form.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/enctype)
@@ -321,7 +321,7 @@ external submit: t => unit = "submit"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/requestSubmit)
 */
 @send
-external requestSubmit: (t, ~submitter: HTML.htmlElement=?) => unit = "requestSubmit"
+external requestSubmit: (t, ~submitter: DOMTree.htmlElement=?) => unit = "requestSubmit"
 
 /**
 Fires when the user resets a form.

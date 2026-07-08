@@ -4,7 +4,7 @@ Provides special properties and methods (beyond the regular HTMLElement object i
 TODO: mark as private once mutating fields of private records is allowed
 */
 type rec t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Retrieves the caption object of a table.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/caption)

@@ -4,11 +4,11 @@ Provides properties and methods (beyond those inherited from HTMLElement) for ma
 TODO: mark as private once mutating fields of private records is allowed
 */
 type t = {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/htmlFor)
     */
-  htmlFor: domTokenList,
+  htmlFor: DOM.domTokenList,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/form)
     */
@@ -41,7 +41,7 @@ Can be set, to change the value.
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/validity)
     */
-  validity: validityState,
+  validity: DOM.validityState,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/validationMessage)
     */
@@ -49,7 +49,7 @@ Can be set, to change the value.
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/labels)
     */
-  labels: nodeList<HTMLLabelElement.t>,
+  labels: DOM.nodeList<HTMLLabelElement.t>,
 }
 
 include HTMLElement.Impl({type t = t})

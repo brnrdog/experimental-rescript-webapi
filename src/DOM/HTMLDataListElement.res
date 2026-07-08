@@ -3,7 +3,7 @@ Provides special properties (beyond the HTMLElement object interface it also has
 [See HTMLDataListElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLDataListElement)
 */
 type t = private {
-  ...HTML.htmlElement,
+  ...DOMTree.htmlElement,
   /**
     Returns an HTMLCollection of the option elements of the datalist element.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLDataListElement/options)
