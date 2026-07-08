@@ -1,70 +1,110 @@
 /**
+A Selection object represents the range of text selected by the user or the current position of the caret. To obtain a Selection object for examination or modification, call Window.getSelection().
+[See Selection on MDN](https://developer.mozilla.org/docs/Web/API/Selection)
+*/
+type t = private {
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/anchorNode)
+    */
+  anchorNode: Null.t<DOM.node>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/anchorOffset)
+    */
+  anchorOffset: int,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/focusNode)
+    */
+  focusNode: Null.t<DOM.node>,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/focusOffset)
+    */
+  focusOffset: int,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/isCollapsed)
+    */
+  isCollapsed: bool,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/rangeCount)
+    */
+  rangeCount: int,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/type)
+    */
+  @as("type")
+  type_: string,
+  /**
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/direction)
+    */
+  direction: string,
+}
+
+/**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/getRangeAt)
 */
 @send
-external getRangeAt: (DomTypes.selection, int) => DomTypes.range = "getRangeAt"
+external getRangeAt: (t, int) => DomTypes.range = "getRangeAt"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/addRange)
 */
 @send
-external addRange: (DomTypes.selection, DomTypes.range) => unit = "addRange"
+external addRange: (t, DomTypes.range) => unit = "addRange"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/removeRange)
 */
 @send
-external removeRange: (DomTypes.selection, DomTypes.range) => unit = "removeRange"
+external removeRange: (t, DomTypes.range) => unit = "removeRange"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/removeAllRanges)
 */
 @send
-external removeAllRanges: DomTypes.selection => unit = "removeAllRanges"
+external removeAllRanges: t => unit = "removeAllRanges"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/removeAllRanges)
 */
 @send
-external empty: DomTypes.selection => unit = "empty"
+external empty: t => unit = "empty"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/collapse)
 */
 @send
-external collapse: (DomTypes.selection, ~node: DomTypes.node, ~offset: int=?) => unit = "collapse"
+external collapse: (t, ~node: DomTypes.node, ~offset: int=?) => unit = "collapse"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/collapse)
 */
 @send
-external setPosition: (DomTypes.selection, ~node: DomTypes.node, ~offset: int=?) => unit =
+external setPosition: (t, ~node: DomTypes.node, ~offset: int=?) => unit =
   "setPosition"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/collapseToStart)
 */
 @send
-external collapseToStart: DomTypes.selection => unit = "collapseToStart"
+external collapseToStart: t => unit = "collapseToStart"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/collapseToEnd)
 */
 @send
-external collapseToEnd: DomTypes.selection => unit = "collapseToEnd"
+external collapseToEnd: t => unit = "collapseToEnd"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/extend)
 */
 @send
-external extend: (DomTypes.selection, ~node: DomTypes.node, ~offset: int=?) => unit = "extend"
+external extend: (t, ~node: DomTypes.node, ~offset: int=?) => unit = "extend"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/setBaseAndExtent)
 */
 @send
 external setBaseAndExtent: (
-  DomTypes.selection,
+  t,
   ~anchorNode: DomTypes.node,
   ~anchorOffset: int,
   ~focusNode: DomTypes.node,
@@ -75,14 +115,14 @@ external setBaseAndExtent: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/selectAllChildren)
 */
 @send
-external selectAllChildren: (DomTypes.selection, DomTypes.node) => unit = "selectAllChildren"
+external selectAllChildren: (t, DomTypes.node) => unit = "selectAllChildren"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/modify)
 */
 @send
 external modify: (
-  DomTypes.selection,
+  t,
   ~alter: string=?,
   ~direction: string=?,
   ~granularity: string=?,
@@ -92,14 +132,14 @@ external modify: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/deleteFromDocument)
 */
 @send
-external deleteFromDocument: DomTypes.selection => unit = "deleteFromDocument"
+external deleteFromDocument: t => unit = "deleteFromDocument"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Selection/containsNode)
 */
 @send
 external containsNode: (
-  DomTypes.selection,
+  t,
   ~node: DomTypes.node,
   ~allowPartialContainment: bool=?,
 ) => bool = "containsNode"

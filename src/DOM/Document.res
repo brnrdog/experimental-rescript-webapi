@@ -212,7 +212,7 @@ Creates a new document.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/createDocumentFragment)
 */
 @send
-external createDocumentFragment: DOM.document => DOM.documentFragment = "createDocumentFragment"
+external createDocumentFragment: DOM.document => DocumentFragment.t = "createDocumentFragment"
 
 /**
 Creates a text string from the specified value.
@@ -220,7 +220,7 @@ Creates a text string from the specified value.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/createTextNode)
 */
 @send
-external createTextNode: (DOM.document, string) => DOM.text = "createTextNode"
+external createTextNode: (DOM.document, string) => Text.t = "createTextNode"
 
 /**
 Returns a CDATASection node whose data is data.
@@ -438,7 +438,7 @@ Returns an object representing the current selection of the document that is loa
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getSelection)
 */
 @send
-external getSelection: DOM.document => null<DOM.selection> = "getSelection"
+external getSelection: DOM.document => null<Selection.t> = "getSelection"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess)

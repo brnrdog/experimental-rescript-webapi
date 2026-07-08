@@ -446,4 +446,4 @@ external cancelIdleCallback: int => unit = "cancelIdleCallback"
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/getSelection)
 */
-external getSelection: unit => null<DomTypes.selection> = "getSelection"
+external getSelection: unit => null<Selection.t> = "getSelection"

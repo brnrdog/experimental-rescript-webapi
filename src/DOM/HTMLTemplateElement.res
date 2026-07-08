@@ -9,7 +9,7 @@ type t = {
     Returns the template contents (a DocumentFragment).
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content)
     */
-  content: documentFragment,
+  content: DocumentFragment.t,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootMode)
     */

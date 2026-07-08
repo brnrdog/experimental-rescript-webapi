@@ -76,13 +76,13 @@ external deleteContents: DomTypes.range => unit = "deleteContents"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/extractContents)
 */
 @send
-external extractContents: DomTypes.range => DomTypes.documentFragment = "extractContents"
+external extractContents: DomTypes.range => DocumentFragment.t = "extractContents"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/cloneContents)
 */
 @send
-external cloneContents: DomTypes.range => DomTypes.documentFragment = "cloneContents"
+external cloneContents: DomTypes.range => DocumentFragment.t = "cloneContents"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/insertNode)
@@ -145,5 +145,5 @@ external getBoundingClientRect: DomTypes.range => DomTypes.domRect = "getBoundin
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment)
 */
 @send
-external createContextualFragment: (DomTypes.range, string) => DomTypes.documentFragment =
+external createContextualFragment: (DomTypes.range, string) => DocumentFragment.t =
   "createContextualFragment"

@@ -307,7 +307,7 @@ module Impl = (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/attachInternals)
 */
   @send
-  external attachInternals: T.t => DomTypes.elementInternals = "attachInternals"
+  external attachInternals: T.t => ElementInternals.t = "attachInternals"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/blur)

@@ -289,4 +289,4 @@ external assign: (t, DOM.element) => unit = "assign"
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assign)
 */
 @send
-external assign2: (t, DomTypes.text) => unit = "assign"
+external assign2: (t, Text.t) => unit = "assign"
