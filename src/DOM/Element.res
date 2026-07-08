@@ -119,7 +119,7 @@ type rec element = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/attributes)
     */
-  attributes: namedNodeMap,
+  attributes: NamedNodeMap.t,
   /**
     Returns element's shadow root, if any, and if shadow root's mode is "open", and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/shadowRoot)
@@ -504,13 +504,13 @@ Returns the qualified names of all element's attributes. Can contain duplicates.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNode)
 */
   @send
-  external getAttributeNode: (T.t, string) => DOM.attr = "getAttributeNode"
+  external getAttributeNode: (T.t, string) => Attr.t = "getAttributeNode"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNodeNS)
 */
   @send
-  external getAttributeNodeNS: (T.t, ~namespace: string, ~localName: string) => DOM.attr =
+  external getAttributeNodeNS: (T.t, ~namespace: string, ~localName: string) => Attr.t =
     "getAttributeNodeNS"
 
   /**
@@ -679,7 +679,7 @@ Removes element's first attribute whose qualified name is qualifiedName.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/removeAttributeNode)
 */
   @send
-  external removeAttributeNode: (T.t, DOM.attr) => DOM.attr = "removeAttributeNode"
+  external removeAttributeNode: (T.t, Attr.t) => Attr.t = "removeAttributeNode"
 
   /**
 Removes element's attribute whose namespace is namespace and local name is localName.
@@ -832,13 +832,13 @@ Sets the value of element's first attribute whose qualified name is qualifiedNam
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNode)
 */
   @send
-  external setAttributeNode: (T.t, DOM.attr) => DOM.attr = "setAttributeNode"
+  external setAttributeNode: (T.t, Attr.t) => Attr.t = "setAttributeNode"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNodeNS)
 */
   @send
-  external setAttributeNodeNS: (T.t, DOM.attr) => DOM.attr = "setAttributeNodeNS"
+  external setAttributeNodeNS: (T.t, Attr.t) => Attr.t = "setAttributeNodeNS"
 
   /**
 Sets the value of element's attribute whose namespace is namespace and local name is localName to value.

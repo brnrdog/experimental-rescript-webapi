@@ -272,13 +272,13 @@ Creates an attribute object with a specified name.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/createAttribute)
 */
 @send
-external createAttribute: (DOM.document, string) => DOM.attr = "createAttribute"
+external createAttribute: (DOM.document, string) => Attr.t = "createAttribute"
 
 /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/createAttributeNS)
 */
 @send
-external createAttributeNS: (DOM.document, ~namespace: string, ~qualifiedName: string) => DOM.attr =
+external createAttributeNS: (DOM.document, ~namespace: string, ~qualifiedName: string) => Attr.t =
   "createAttributeNS"
 
 /**

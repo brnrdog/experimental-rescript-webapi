@@ -28,7 +28,6 @@ type elementInternals = DOM.elementInternals
 type nodeFilter = DOM.nodeFilter
 type fileList = DOM.fileList
 type cssRule = DOM.cssRule
-type attr = DOM.attr
 type domRectList = DOM.domRectList
 type nodeIterator = DOM.nodeIterator
 type characterData = DOM.characterData
@@ -224,18 +223,6 @@ Can be set, to change the associated attribute.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/DOMTokenList/value)
     */
   mutable value: string,
-}
-
-/**
-A collection of Attr objects. Objects inside a NamedNodeMap are not in any particular order, unlike NodeList, although they may be accessed by an index as in an array.
-[See NamedNodeMap on MDN](https://developer.mozilla.org/docs/Web/API/NamedNodeMap)
-*/
-@editor.completeFrom(NamedNodeMap)
-type namedNodeMap = private {
-  /**
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/length)
-    */
-  length: int,
 }
 
 /**

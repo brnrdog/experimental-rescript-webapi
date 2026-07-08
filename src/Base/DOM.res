@@ -212,18 +212,6 @@ Can be set, to change the associated attribute.
 }
 
 /**
-A collection of Attr objects. Objects inside a NamedNodeMap are not in any particular order, unlike NodeList, although they may be accessed by an index as in an array.
-[See NamedNodeMap on MDN](https://developer.mozilla.org/docs/Web/API/NamedNodeMap)
-*/
-@editor.completeFrom(NamedNodeMap)
-type namedNodeMap = private {
-  /**
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/length)
-    */
-  length: int,
-}
-
-/**
 [See FragmentDirective on MDN](https://developer.mozilla.org/docs/Web/API/FragmentDirective)
 */
 type fragmentDirective = {}
@@ -2321,107 +2309,6 @@ NodeList objects are collections of nodes, usually returned by properties such a
 }
 
 
-/**
-A WebApiDOM element's attribute as an object. In most WebApiDOM methods, you will probably directly retrieve the attribute as a string (e.g., Element.getAttribute(), but certain functions (e.g., Element.getAttributeNode()) or means of iterating give Attr types.
-[See Attr on MDN](https://developer.mozilla.org/docs/Web/API/Attr)
-*/
-and attr = {
-  // Base properties from Node
-  /**
-    Returns the type of node.
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nodeType)
-    */
-  nodeType: int,
-  /**
-    Returns a string appropriate for the type of node.
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nodeName)
-    */
-  nodeName: string,
-  /**
-    Returns node's node document's document base URL.
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/baseURI)
-    */
-  baseURI: string,
-  /**
-    Returns true if node is connected and false otherwise.
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/isConnected)
-    */
-  isConnected: bool,
-  /**
-    Returns the node document. Returns null for documents.
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/ownerDocument)
-    */
-  ownerDocument: Null.t<document>,
-  /**
-    Returns the parent.
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentNode)
-    */
-  parentNode: Null.t<node>,
-  /**
-    Returns the parent element.
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/parentElement)
-    */
-  parentElement: Null.t<htmlElement>,
-  /**
-    Returns the children.
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
-    */
-  childNodes: nodeList<node>,
-  /**
-    Returns the first child.
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/firstChild)
-    */
-  firstChild: Null.t<node>,
-  /**
-    Returns the last child.
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/lastChild)
-    */
-  lastChild: Null.t<node>,
-  /**
-    Returns the previous sibling.
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/previousSibling)
-    */
-  previousSibling: Null.t<node>,
-  /**
-    Returns the next sibling.
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nextSibling)
-    */
-  nextSibling: Null.t<node>,
-  /**
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/nodeValue)
-    */
-  mutable nodeValue: Null.t<string>,
-  /**
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Node/textContent)
-    */
-  mutable textContent: Null.t<string>,
-  // End base properties from Node
-
-  /**
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Attr/namespaceURI)
-    */
-  namespaceURI: Null.t<string>,
-  /**
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Attr/prefix)
-    */
-  prefix: Null.t<string>,
-  /**
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Attr/localName)
-    */
-  localName: string,
-  /**
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Attr/name)
-    */
-  name: string,
-  /**
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Attr/value)
-    */
-  mutable value: string,
-  /**
-    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Attr/ownerElement)
-    */
-  ownerElement: Null.t<element>,
-}
 
 /**
 The CharacterData abstract interface represents a Node object that contains characters. This is an abstract interface, meaning there aren't any object of type CharacterData: it is implemented by other interfaces, like Text, Comment, or ProcessingInstruction which aren't abstract.

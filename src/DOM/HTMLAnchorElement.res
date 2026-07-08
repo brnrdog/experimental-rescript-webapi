@@ -127,7 +127,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/attributes)
     */
-  attributes: namedNodeMap,
+  attributes: NamedNodeMap.t,
   /**
     Returns element's shadow root, if any, and if shadow root's mode is "open", and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/shadowRoot)
