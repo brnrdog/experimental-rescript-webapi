@@ -12,7 +12,7 @@ type t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/form)
     */
-  form: Null.t<HTMLFormElement.t>,
+  form: Null.t<DOMTree.htmlFormElement>,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/name)
     */

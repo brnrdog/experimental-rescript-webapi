@@ -13,7 +13,7 @@ type t = {
     Retrieves a reference to the form that the object is embedded in.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/form)
     */
-  form: Null.t<HTMLFormElement.t>,
+  form: Null.t<DOMTree.htmlFormElement>,
   /**
     Sets or retrieves the Boolean value indicating whether multiple items can be selected from a list.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/multiple)

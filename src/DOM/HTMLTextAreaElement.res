@@ -22,7 +22,7 @@ type t = {
     Retrieves a reference to the form that the object is embedded in.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/form)
     */
-  form: Null.t<HTMLFormElement.t>,
+  form: Null.t<DOMTree.htmlFormElement>,
   /**
     Sets or retrieves the maximum number of characters that the user can enter in a text control.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/maxLength)

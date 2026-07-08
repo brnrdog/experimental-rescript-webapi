@@ -13,7 +13,7 @@ type t = {
     Retrieves a reference to the form that the object is embedded in.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/form)
     */
-  form: Null.t<HTMLFormElement.t>,
+  form: Null.t<DOMTree.htmlFormElement>,
   /**
     Sets or retrieves a value that you can use to implement your own label functionality for the object.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/label)
