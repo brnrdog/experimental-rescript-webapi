@@ -279,7 +279,7 @@ type rec t = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/dataset)
     */
-  dataset: domStringMap,
+  dataset: DOMStringMap.t,
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLElement/nonce)
     */

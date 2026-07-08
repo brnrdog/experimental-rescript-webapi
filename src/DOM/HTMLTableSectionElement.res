@@ -1,4 +1,17 @@
-include HTMLElement.Impl({type t = DomTypes.htmlTableSectionElement})
+/**
+Provides special properties and methods (beyond the HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of sections, that is headers, footers and bodies, in an HTML table.
+[See HTMLTableSectionElement on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement)
+*/
+type t = private {
+  ...HTMLElement.t,
+  /**
+    Sets or retrieves the number of horizontal rows contained in the object.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/rows)
+    */
+  rows: HTMLCollection.t<HTMLTableRowElement.t>,
+}
+
+include HTMLElement.Impl({type t = t})
 
 /**
 Creates a new row (tr) in the table, and adds the row to the rows collection.
@@ -7,9 +20,9 @@ Creates a new row (tr) in the table, and adds the row to the rows collection.
 */
 @send
 external insertRow: (
-  DomTypes.htmlTableSectionElement,
+  t,
   ~index: int=?,
-) => DomTypes.htmlTableRowElement = "insertRow"
+) => HTMLTableRowElement.t = "insertRow"
 
 /**
 Removes the specified row (tr) from the element and from the rows collection.
@@ -17,4 +30,4 @@ Removes the specified row (tr) from the element and from the rows collection.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/deleteRow)
 */
 @send
-external deleteRow: (DomTypes.htmlTableSectionElement, int) => unit = "deleteRow"
+external deleteRow: (t, int) => unit = "deleteRow"

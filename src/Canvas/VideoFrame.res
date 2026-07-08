@@ -11,7 +11,7 @@ let frame = VideoFrame.fromHTMLImageElement(~image=myImageElement)
 */
 @new
 external fromHTMLImageElement: (
-  ~image: DomTypes.htmlImageElement,
+  ~image: HTMLImageElement.t,
   ~init: DomTypes.videoFrameInit=?,
 ) => DomTypes.videoFrame = "VideoFrame"
 
@@ -45,7 +45,7 @@ let frame = VideoFrame.fromHTMLVideoElement(~image=myVideoElement)
 */
 @new
 external fromHTMLVideoElement: (
-  ~image: DomTypes.htmlVideoElement,
+  ~image: HTMLVideoElement.t,
   ~init: DomTypes.videoFrameInit=?,
 ) => DomTypes.videoFrame = "VideoFrame"
 
@@ -62,7 +62,7 @@ let frame = VideoFrame.fromHTMLCanvasElement(~image=myCanvasElement)
 */
 @new
 external fromHTMLCanvasElement: (
-  ~image: DomTypes.htmlCanvasElement,
+  ~image: HTMLCanvasElement.t,
   ~init: DomTypes.videoFrameInit=?,
 ) => DomTypes.videoFrame = "VideoFrame"
 

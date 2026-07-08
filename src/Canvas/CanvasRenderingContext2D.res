@@ -132,7 +132,7 @@ external createConicGradient: (
 @send
 external createPattern: (
   DomTypes.canvasRenderingContext2D,
-  ~image: DomTypes.htmlImageElement,
+  ~image: HTMLImageElement.t,
   ~repetition: string,
 ) => CanvasTypes.canvasPattern = "createPattern"
 
@@ -152,7 +152,7 @@ external createPattern2: (
 @send
 external createPattern3: (
   DomTypes.canvasRenderingContext2D,
-  ~image: DomTypes.htmlVideoElement,
+  ~image: HTMLVideoElement.t,
   ~repetition: string,
 ) => CanvasTypes.canvasPattern = "createPattern"
 
@@ -162,7 +162,7 @@ external createPattern3: (
 @send
 external createPattern4: (
   DomTypes.canvasRenderingContext2D,
-  ~image: DomTypes.htmlCanvasElement,
+  ~image: HTMLCanvasElement.t,
   ~repetition: string,
 ) => CanvasTypes.canvasPattern = "createPattern"
 
@@ -383,7 +383,7 @@ external measureText: (DomTypes.canvasRenderingContext2D, string) => CanvasTypes
 @send
 external drawImage: (
   DomTypes.canvasRenderingContext2D,
-  ~image: DomTypes.htmlImageElement,
+  ~image: HTMLImageElement.t,
   ~dx: float,
   ~dy: float,
 ) => unit = "drawImage"
@@ -405,7 +405,7 @@ external drawImageWithSvg: (
 @send
 external drawImageWithVideo: (
   DomTypes.canvasRenderingContext2D,
-  ~image: DomTypes.htmlVideoElement,
+  ~image: HTMLVideoElement.t,
   ~dx: float,
   ~dy: float,
 ) => unit = "drawImage"
@@ -416,7 +416,7 @@ external drawImageWithVideo: (
 @send
 external drawImageWithCanvas: (
   DomTypes.canvasRenderingContext2D,
-  ~image: DomTypes.htmlCanvasElement,
+  ~image: HTMLCanvasElement.t,
   ~dx: float,
   ~dy: float,
 ) => unit = "drawImage"
@@ -460,7 +460,7 @@ external drawImageWithVideoFrame: (
 @send
 external drawImageWithDimensions: (
   DomTypes.canvasRenderingContext2D,
-  ~image: DomTypes.htmlImageElement,
+  ~image: HTMLImageElement.t,
   ~dx: float,
   ~dy: float,
   ~dw: float,
@@ -486,7 +486,7 @@ external drawImageWithSvgDimensions: (
 @send
 external drawImageWithVideoDimensions: (
   DomTypes.canvasRenderingContext2D,
-  ~image: DomTypes.htmlVideoElement,
+  ~image: HTMLVideoElement.t,
   ~dx: float,
   ~dy: float,
   ~dw: float,
@@ -499,7 +499,7 @@ external drawImageWithVideoDimensions: (
 @send
 external drawImageWithCanvasDimensions: (
   DomTypes.canvasRenderingContext2D,
-  ~image: DomTypes.htmlCanvasElement,
+  ~image: HTMLCanvasElement.t,
   ~dx: float,
   ~dy: float,
   ~dw: float,
@@ -551,7 +551,7 @@ external drawImageWithVideoFrameDimensions: (
 @send
 external drawImageWithSubRectangle: (
   DomTypes.canvasRenderingContext2D,
-  ~image: DomTypes.htmlImageElement,
+  ~image: HTMLImageElement.t,
   ~sx: float,
   ~sy: float,
   ~sw: float,
@@ -585,7 +585,7 @@ external drawImageWithSvgSubRectangle: (
 @send
 external drawImageWithVideoSubRectangle: (
   DomTypes.canvasRenderingContext2D,
-  ~image: DomTypes.htmlVideoElement,
+  ~image: HTMLVideoElement.t,
   ~sx: float,
   ~sy: float,
   ~sw: float,
@@ -602,7 +602,7 @@ external drawImageWithVideoSubRectangle: (
 @send
 external drawImageWithCanvasSubRectangle: (
   DomTypes.canvasRenderingContext2D,
-  ~image: DomTypes.htmlCanvasElement,
+  ~image: HTMLCanvasElement.t,
   ~sx: float,
   ~sy: float,
   ~sw: float,

@@ -121,7 +121,7 @@ Retrieves a collection of objects based on the specified element name.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getElementsByTagName)
 */
 @send
-external getElementsByTagName: (DOM.document, string) => DOM.htmlCollection<DOM.element> =
+external getElementsByTagName: (DOM.document, string) => HTMLCollection.t<DOM.element> =
   "getElementsByTagName"
 
 /**
@@ -139,14 +139,14 @@ external getElementsByTagNameNS: (
   DOM.document,
   ~namespace: string,
   ~localName: string,
-) => DOM.htmlCollection<DOM.element> = "getElementsByTagNameNS"
+) => HTMLCollection.t<DOM.element> = "getElementsByTagNameNS"
 
 /**
 Returns a HTMLCollection of the elements in the object on which the method was invoked (a document or an element) that have all the classes given by classNames. The classNames argument is interpreted as a space-separated list of classes.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getElementsByClassName)
 */
 @send
-external getElementsByClassName: (DOM.document, string) => DOM.htmlCollection<DOM.element> =
+external getElementsByClassName: (DOM.document, string) => HTMLCollection.t<DOM.element> =
   "getElementsByClassName"
 
 type elementCreationOptions = {mutable is?: string}
@@ -365,7 +365,7 @@ Gets a collection of objects based on the value of the NAME or ID attribute.
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/getElementsByName)
 */
 @send
-external getElementsByName: (DOM.document, string) => DOM.nodeList<DOM.htmlElement> =
+external getElementsByName: (DOM.document, string) => DOM.nodeList<HTMLElement.t> =
   "getElementsByName"
 
 /**

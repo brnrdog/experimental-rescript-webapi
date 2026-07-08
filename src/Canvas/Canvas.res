@@ -2,7 +2,7 @@
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/createImageBitmap)
 */
 external createImageBitmap: (
-  ~image: DomTypes.htmlImageElement,
+  ~image: HTMLImageElement.t,
   ~options: DomTypes.imageBitmapOptions=?,
 ) => promise<CanvasTypes.imageBitmap> = "createImageBitmap"
 
@@ -18,7 +18,7 @@ external createImageBitmap2: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/createImageBitmap)
 */
 external createImageBitmap3: (
-  ~image: DomTypes.htmlVideoElement,
+  ~image: HTMLVideoElement.t,
   ~options: DomTypes.imageBitmapOptions=?,
 ) => promise<CanvasTypes.imageBitmap> = "createImageBitmap"
 
@@ -26,7 +26,7 @@ external createImageBitmap3: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/createImageBitmap)
 */
 external createImageBitmap4: (
-  ~image: DomTypes.htmlCanvasElement,
+  ~image: HTMLCanvasElement.t,
   ~options: DomTypes.imageBitmapOptions=?,
 ) => promise<CanvasTypes.imageBitmap> = "createImageBitmap"
 
@@ -74,7 +74,7 @@ external createImageBitmap9: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/createImageBitmap)
 */
 external createImageBitmap10: (
-  ~image: DomTypes.htmlImageElement,
+  ~image: HTMLImageElement.t,
   ~sx: int,
   ~sy: int,
   ~sw: int,
@@ -98,7 +98,7 @@ external createImageBitmap11: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/createImageBitmap)
 */
 external createImageBitmap12: (
-  ~image: DomTypes.htmlVideoElement,
+  ~image: HTMLVideoElement.t,
   ~sx: int,
   ~sy: int,
   ~sw: int,
@@ -110,7 +110,7 @@ external createImageBitmap12: (
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Window/createImageBitmap)
 */
 external createImageBitmap13: (
-  ~image: DomTypes.htmlCanvasElement,
+  ~image: HTMLCanvasElement.t,
   ~sx: int,
   ~sy: int,
   ~sw: int,

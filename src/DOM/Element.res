@@ -177,7 +177,7 @@ type rec element = {
     Returns the child elements.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/children)
     */
-  children: htmlCollection<element>,
+  children: HTMLCollection.t<element>,
   /**
     Returns the first child that is an element, and null otherwise.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Document/firstElementChild)
@@ -538,14 +538,14 @@ Returns a HTMLCollection of the elements in the object on which the method was i
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getElementsByClassName)
 */
   @send
-  external getElementsByClassName: (T.t, string) => DOM.htmlCollection<DOM.element> =
+  external getElementsByClassName: (T.t, string) => HTMLCollection.t<DOM.element> =
     "getElementsByClassName"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagName)
 */
   @send
-  external getElementsByTagName: (T.t, string) => DOM.htmlCollection<DOM.element> =
+  external getElementsByTagName: (T.t, string) => HTMLCollection.t<DOM.element> =
     "getElementsByTagName"
 
   /**
@@ -556,7 +556,7 @@ Returns a HTMLCollection of the elements in the object on which the method was i
     DOM.element,
     ~namespace: string,
     ~localName: string,
-  ) => DOM.htmlCollection<DOM.element> = "getElementsByTagNameNS"
+  ) => HTMLCollection.t<DOM.element> = "getElementsByTagNameNS"
 
   /**
 [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Element/getHTML)

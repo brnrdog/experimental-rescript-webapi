@@ -5,7 +5,7 @@
 external define: (
   DomTypes.customElementRegistry,
   ~name: string,
-  ~constructor: DomTypes.htmlElement,
+  ~constructor: HTMLElement.t,
   ~options: DomTypes.elementDefinitionOptions=?,
 ) => unit = "define"
 

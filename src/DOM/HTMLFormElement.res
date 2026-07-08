@@ -299,7 +299,7 @@ type t = {
     Retrieves a collection, in source order, of all controls in a given form.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/elements)
     */
-  elements: htmlFormControlsCollection,
+  elements: HTMLFormControlsCollection.t,
   /**
     Sets or retrieves the number of objects in a collection.
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/length)
