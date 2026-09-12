@@ -8,6 +8,7 @@ type slotAssignmentMode =
   | @as("manual") Manual
   | @as("named") Named
 
+@editor.completeFrom(CustomStateSet)
 type customStateSet = {}
 
 /**

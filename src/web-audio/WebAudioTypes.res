@@ -266,7 +266,7 @@ TODO: mark as private once mutating fields of private records is allowed
 The position and orientation of the unique person listening to the audio scene, and is used in audio spatialization. All PannerNodes spatialize in relation to the AudioListener stored in the BaseAudioContext.listener attribute.
 [See AudioListener on MDN](https://developer.mozilla.org/docs/Web/API/AudioListener)
 */
-and audioListener = {
+@editor.completeFrom(AudioListener) and audioListener = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/AudioListener/positionX)
     */
@@ -308,7 +308,7 @@ and audioListener = {
 /**
 [See AudioWorklet on MDN](https://developer.mozilla.org/docs/Web/API/AudioWorklet)
 */
-and audioWorklet = {
+@editor.completeFrom(AudioWorklet) and audioWorklet = {
   ...worklet,
 }
 
@@ -1032,6 +1032,7 @@ type mediaStreamAudioDestinationNode = private {
 /**
 [See AudioParamMap on MDN](https://developer.mozilla.org/docs/Web/API/AudioParamMap)
 */
+@editor.completeFrom(AudioParamMap)
 type audioParamMap = {}
 
 /**

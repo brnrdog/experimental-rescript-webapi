@@ -200,6 +200,7 @@ type shareData = {
 /**
 [See UserActivation on MDN](https://developer.mozilla.org/docs/Web/API/UserActivation)
 */
+@editor.completeFrom(UserActivation)
 type userActivation = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/UserActivation/hasBeenActive)
@@ -238,6 +239,7 @@ Can be set, to change the associated attribute.
 /**
 [See FragmentDirective on MDN](https://developer.mozilla.org/docs/Web/API/FragmentDirective)
 */
+@editor.completeFrom(FragmentDirective)
 type fragmentDirective = {}
 
 /**
@@ -249,6 +251,7 @@ type customElementRegistry = private {}
 /**
 [See BarProp on MDN](https://developer.mozilla.org/docs/Web/API/BarProp)
 */
+@editor.completeFrom(BarProp)
 type barProp = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/BarProp/visible)
@@ -400,6 +403,7 @@ type screenOrientation = private {
 A screen, usually the one on which the current window is being rendered, and is obtained using window.screen.
 [See Screen on MDN](https://developer.mozilla.org/docs/Web/API/Screen)
 */
+@editor.completeFrom(Screen)
 type screen = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/Screen/availWidth)
@@ -515,6 +519,7 @@ type domRect = private {
 The validity states that an element can be in, with respect to constraint validation. Together, they help explain why an element's value fails to validate, if it's not valid.
 [See ValidityState on MDN](https://developer.mozilla.org/docs/Web/API/ValidityState)
 */
+@editor.completeFrom(ValidityState)
 type validityState = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/ValidityState/valueMissing)

@@ -23,6 +23,7 @@ type permissions = private {}
 /**
 [See PermissionStatus on MDN](https://developer.mozilla.org/docs/Web/API/PermissionStatus)
 */
+@editor.completeFrom(PermissionStatus)
 type permissionStatus = {
   ...DOM.eventTarget,
   /**

@@ -159,6 +159,7 @@ type imageBitmap = private {
 /**
 [See OffscreenCanvasRenderingContext2D on MDN](https://developer.mozilla.org/docs/Web/API/OffscreenCanvasRenderingContext2D)
 */
+@editor.completeFrom(OffscreenCanvasRenderingContext2D)
 type offscreenCanvasRenderingContext2D = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas)
@@ -286,6 +287,7 @@ type imageBitmapRenderingContext = private {
 Provides an interface to the OpenGL ES 2.0 graphics rendering context for the drawing surface of an HTML <canvas> element.
 [See WebGLRenderingContext on MDN](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext)
 */
+@editor.completeFrom(WebGLRenderingContext)
 type webGLRenderingContext = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/canvas)
@@ -312,6 +314,7 @@ type webGLRenderingContext = {
 /**
 [See WebGL2RenderingContext on MDN](https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext)
 */
+@editor.completeFrom(WebGL2RenderingContext)
 type webGL2RenderingContext = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/canvas)
@@ -360,6 +363,7 @@ type path2D = private {}
 The dimensions of a piece of text in the canvas, as created by the CanvasRenderingContext2D.measureText() method.
 [See TextMetrics on MDN](https://developer.mozilla.org/docs/Web/API/TextMetrics)
 */
+@editor.completeFrom(TextMetrics)
 type textMetrics = {
   /**
     Returns the measurement described below.

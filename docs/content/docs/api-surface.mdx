@@ -41,6 +41,58 @@ Generated implementation modules such as `DomTypes`, `FetchTypes`, `EventTypes`,
 module's `t` type when it has one, or use a dedicated public type module. Otherwise, let
 the value type be inferred from constructors and accessors.
 
+### Interface types you receive but never construct
+
+Values the browser hands to you, such as observer entries, form validity, text metrics and
+gamepads, have their own public module. You can name them in a callback or a helper instead
+of relying on inference.
+
+```ReScript
+let onIntersect = (entries: array<WebAPI.IntersectionObserverEntry.t>, _observer) =>
+  entries->Array.forEach(entry =>
+    if entry.isIntersecting {
+      Console.log(entry.intersectionRatio)
+    }
+  )
+
+let observer = WebAPI.IntersectionObserver.make(~callback=onIntersect)
+```
+
+The modules in this group are:
+
+```text
+AnimationTimeline           GamepadButton
+AudioListener               GeolocationPositionError
+AudioParamMap               IntersectionObserverEntry
+AudioWorklet                Lock
+BarProp                     MutationRecord
+Credential                  OffscreenCanvasRenderingContext2D
+CryptoKey                   PerformanceMeasure
+CustomStateSet              PermissionStatus
+DocumentType                PushSubscriptionOptions
+EventCounts                 ResizeObserverEntry
+FileSystem                  ResizeObserverSize
+FragmentDirective           Screen
+Gamepad                     SpeechSynthesisVoice
+TextMetrics                 ValidityState
+TextTrackCue                WebGLRenderingContext
+UserActivation              WebGL2RenderingContext
+WritableStreamDefaultWriter
+```
+
+Each exposes the interface as `t`. The record is `private`, because these values come from
+the browser and are never built by hand.
+
+```ReScript
+let describe = (entry: WebAPI.ResizeObserverEntry.t) => {
+  let size: WebAPI.ResizeObserverSize.t = entry.contentBoxSize->Array.getUnsafe(0)
+  (size.inlineSize, size.blockSize)
+}
+```
+
+`WebGLRenderingContext` and `WebGL2RenderingContext` currently carry only the context's own
+properties; the WebGL call surface itself is not bound yet.
+
 ## Consumer feature bundles
 
 Feature names select related bindings and their transitive dependencies. They do not add

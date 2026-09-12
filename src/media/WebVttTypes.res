@@ -29,7 +29,7 @@ TextTrackCues represent a string of text that will be displayed for some duratio
 [See TextTrackCue on MDN](https://developer.mozilla.org/docs/Web/API/TextTrackCue)
 TODO: mark as private once mutating fields of private records is allowed
 */
-@editor.completeFrom(TextTrack)
+@editor.completeFrom(TextTrackCue)
 type rec textTrackCue = {
   ...DOM.eventTarget,
   /**

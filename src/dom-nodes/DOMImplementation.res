@@ -8,6 +8,7 @@ type t = private {}
 A Node containing a doctype.
 [See DocumentType on MDN](https://developer.mozilla.org/docs/Web/API/DocumentType)
 */
+@editor.completeFrom(DocumentType)
 type documentType = {
   // Base properties from Node
   /**

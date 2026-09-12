@@ -12,6 +12,7 @@ type animationReplaceState =
 /**
   [See AnimationTimeline on MDN](https://developer.mozilla.org/docs/Web/API/AnimationTimeline)
   */
+@editor.completeFrom(AnimationTimeline)
 type animationTimeline = private {
   /**
       [Read more on MDN](https://developer.mozilla.org/docs/Web/API/AnimationTimeline/currentTime)

@@ -8,6 +8,7 @@ type resizeObserverBoxOptions =
 /**
 [See ResizeObserverSize on MDN](https://developer.mozilla.org/docs/Web/API/ResizeObserverSize)
 */
+@editor.completeFrom(ResizeObserverSize)
 type resizeObserverSize = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/ResizeObserverSize/inlineSize)
@@ -22,6 +23,7 @@ type resizeObserverSize = {
 /**
 [See ResizeObserverEntry on MDN](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry)
 */
+@editor.completeFrom(ResizeObserverEntry)
 type resizeObserverEntry = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/target)

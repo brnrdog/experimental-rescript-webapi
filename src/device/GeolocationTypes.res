@@ -59,6 +59,7 @@ type geolocationPosition = private {
 /**
 [See GeolocationPositionError on MDN](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError)
 */
+@editor.completeFrom(GeolocationPositionError)
 type geolocationPositionError = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/code)

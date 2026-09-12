@@ -142,7 +142,31 @@ type underlyingSource<'t> = unknown
 
 type readableStreamReader<'t> = unknown
 
-type writableStreamDefaultWriter<'t> = unknown
+/**
+This Streams API interface is the object returned by WritableStream.getWriter() and once created locks the writer to the WritableStream ensuring that no other streams can write to the underlying sink.
+[See WritableStreamDefaultWriter on MDN](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter)
+*/
+@editor.completeFrom(WritableStreamDefaultWriter)
+type writableStreamDefaultWriter<'w> = private {
+  /**
+    Returns a promise that resolves once the stream is closed, or rejects if the stream errors or the writer's lock is released.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/closed)
+    */
+  closed: promise<unit>,
+  /**
+    Returns the desired size required to fill the stream's internal queue, or null if the stream is errored.
+
+    Throws a "TypeError" if the writer's lock is released.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/desiredSize)
+    */
+  @throws(JsExn)
+  desiredSize: Null.t<float>,
+  /**
+    Returns a promise that resolves when the desired size of the stream's internal queue transitions from non-positive to positive.
+    [Read more on MDN](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/ready)
+    */
+  ready: promise<unit>,
+}
 
 type fileSystemWriteChunkType = unknown
 

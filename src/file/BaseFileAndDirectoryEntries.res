@@ -60,7 +60,7 @@ type rec fileSystemEntry = private {
 /**
 [See FileSystem on MDN](https://developer.mozilla.org/docs/Web/API/FileSystem)
 */
-and fileSystem = {
+@editor.completeFrom(FileSystem) and fileSystem = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/FileSystem/name)
     */

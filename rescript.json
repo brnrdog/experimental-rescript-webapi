@@ -68,8 +68,13 @@
       "subdirs": true,
       "feature": "DOM",
       "public": [
+        "BarProp",
         "DOM",
-        "EventType"
+        "EventType",
+        "FragmentDirective",
+        "Screen",
+        "UserActivation",
+        "ValidityState"
       ]
     },
     {
@@ -89,13 +94,15 @@
       "public": [
         "AbstractRange",
         "Attr",
-        "CaretPosition",
         "CDATASection",
+        "CaretPosition",
         "CharacterData",
         "Comment",
+        "CustomStateSet",
         "DOMImplementation",
         "DOMTree",
         "DocumentFragment",
+        "DocumentType",
         "Element",
         "ElementInternals",
         "HTML",
@@ -121,6 +128,7 @@
       "public": [
         "Animation",
         "AnimationEffect",
+        "AnimationTimeline",
         "DocumentTimeline"
       ]
     },
@@ -188,9 +196,13 @@
         "ImageBitmapRenderingContext",
         "ImageData",
         "OffscreenCanvas",
+        "OffscreenCanvasRenderingContext2D",
         "Path2D",
+        "TextMetrics",
         "VideoColorSpace",
-        "VideoFrame"
+        "VideoFrame",
+        "WebGL2RenderingContext",
+        "WebGLRenderingContext"
       ]
     },
     {
@@ -207,6 +219,7 @@
         "PushManager",
         "PushMessageData",
         "PushSubscription",
+        "PushSubscriptionOptions",
         "WebSocket"
       ]
     },
@@ -217,8 +230,10 @@
       "public": [
         "Clipboard",
         "ClipboardItem",
+        "Credential",
         "CredentialsContainer",
         "Navigator",
+        "PermissionStatus",
         "Permissions"
       ]
     },
@@ -341,6 +356,7 @@
         "Blob",
         "File",
         "FileList",
+        "FileSystem",
         "FileSystemDirectoryEntry",
         "FileSystemDirectoryHandle",
         "FileSystemDirectoryReader",
@@ -350,7 +366,8 @@
         "FileSystemWritableFileStream",
         "ReadableStream",
         "WritableStream",
-        "WritableStreamDefaultController"
+        "WritableStreamDefaultController",
+        "WritableStreamDefaultWriter"
       ]
     },
     {
@@ -358,10 +375,14 @@
       "subdirs": true,
       "feature": "Device",
       "public": [
+        "Gamepad",
+        "GamepadButton",
         "GamepadHapticActuator",
         "Geolocation",
         "GeolocationCoordinates",
         "GeolocationPosition",
+        "GeolocationPositionError",
+        "Lock",
         "LockManager",
         "ScreenOrientation",
         "WakeLock",
@@ -392,9 +413,13 @@
       "feature": "Observers",
       "public": [
         "IntersectionObserver",
+        "IntersectionObserverEntry",
         "IntersectionObserverRoot",
         "MutationObserver",
-        "ResizeObserver"
+        "MutationRecord",
+        "ResizeObserver",
+        "ResizeObserverEntry",
+        "ResizeObserverSize"
       ]
     },
     {
@@ -423,7 +448,9 @@
         "RemotePlayback",
         "SpeechSynthesis",
         "SpeechSynthesisUtterance",
+        "SpeechSynthesisVoice",
         "TextTrack",
+        "TextTrackCue",
         "TextTrackCueList",
         "TextTrackList",
         "TimeRanges",
@@ -435,9 +462,11 @@
       "subdirs": true,
       "feature": "Performance",
       "public": [
+        "EventCounts",
         "Performance",
         "PerformanceEntry",
-        "PerformanceMark"
+        "PerformanceMark",
+        "PerformanceMeasure"
       ]
     },
     {
@@ -505,10 +534,13 @@
         "AudioBufferSourceNode",
         "AudioContext",
         "AudioDestinationNode",
+        "AudioListener",
         "AudioNode",
         "AudioParam",
+        "AudioParamMap",
         "AudioProcessingEvent",
         "AudioScheduledSourceNode",
+        "AudioWorklet",
         "AudioWorkletNode",
         "BaseAudioContext",
         "BiquadFilterNode",
@@ -539,6 +571,7 @@
       "feature": "Crypto",
       "public": [
         "Crypto",
+        "CryptoKey",
         "SubtleCrypto"
       ]
     },

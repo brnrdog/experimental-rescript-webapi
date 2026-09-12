@@ -26,6 +26,7 @@ type applicationServerKey
 /**
 [See PushSubscriptionOptions on MDN](https://developer.mozilla.org/docs/Web/API/PushSubscriptionOptions)
 */
+@editor.completeFrom(PushSubscriptionOptions)
 type pushSubscriptionOptions = {
   /**
     [Read more on MDN](https://developer.mozilla.org/docs/Web/API/PushSubscriptionOptions/userVisibleOnly)
